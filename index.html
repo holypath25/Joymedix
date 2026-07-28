@@ -1,0 +1,1026 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JOYMEDIX - K-Medical &amp; Beauty 전문기업</title>
+<meta name="description" content="조이소아과를 모체로 탄생한 K-Medical & Beauty 전문 기업 JOYMEDIX. 메디컬·의료기기·뷰티 제품 유통 및 수출, 클리닉 개원 컨설팅, K-뷰티션 해외 파견.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #050505;
+    --bg-soft: #0d0d0d;
+    --bg-card: #111111;
+    --text: #ffffff;
+    --text-dim: rgba(255,255,255,.55);
+    --text-faint: rgba(255,255,255,.35);
+    --line: rgba(255,255,255,.12);
+    --accent: #2dd4bf;
+    --accent-soft: rgba(45,212,191,.12);
+    --font-en: 'Inter', sans-serif;
+    --font-kr: 'Noto Sans KR', 'Inter', sans-serif;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html { scroll-behavior:smooth; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font-kr);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+  a { color:inherit; text-decoration:none; }
+  img { max-width:100%; display:block; }
+  .container { width:min(1200px, 92%); margin:0 auto; }
+  .label {
+    font-family: var(--font-en);
+    font-size: 11px;
+    letter-spacing: .35em;
+    text-transform: uppercase;
+    color: var(--accent);
+    display:block;
+    margin-bottom: 18px;
+  }
+  .btn {
+    display:inline-block;
+    font-family: var(--font-en);
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: .25em;
+    text-transform: uppercase;
+    padding: 16px 34px;
+    border: 1px solid rgba(255,255,255,.35);
+    background: transparent;
+    color: var(--text);
+    cursor: pointer;
+    transition: all .3s ease;
+  }
+  .btn:hover { background: var(--text); color: var(--bg); border-color: var(--text); }
+  .btn.solid { background: var(--accent); border-color: var(--accent); color:#03201c; }
+  .btn.solid:hover { background:#5eead4; border-color:#5eead4; }
+
+  /* ── Nav ─────────────────────────── */
+  nav {
+    position: fixed; top:0; left:0; right:0; z-index:100;
+    background: rgba(5,5,5,.8);
+    backdrop-filter: blur(14px);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav-inner {
+    width:min(1300px, 94%); margin:0 auto;
+    display:flex; align-items:center; justify-content:space-between;
+    height: 72px; gap: 18px;
+  }
+  .logo {
+    font-family: var(--font-en);
+    font-weight: 900; font-size: 20px; letter-spacing: .12em;
+  }
+  .logo span { color: var(--accent); }
+  .nav-links { display:flex; gap: 32px; list-style:none; }
+  .nav-links a {
+    font-family: var(--font-en);
+    font-size: 12px; font-weight:600; letter-spacing:.2em; text-transform:uppercase;
+    color: var(--text-dim);
+    transition: color .25s;
+  }
+  .nav-links a:hover { color: var(--text); }
+  .nav-right { display:flex; align-items:center; gap: 18px; }
+  .lang-switch {
+    display:flex; align-items:center; gap: 8px;
+    font-family: var(--font-en); font-size: 12px; font-weight:700; letter-spacing:.1em;
+  }
+  .lang-switch button {
+    background:none; border:none; cursor:pointer;
+    font: inherit; color: var(--text-faint);
+    padding: 4px 2px;
+    transition: color .25s;
+  }
+  .lang-switch button.active { color: var(--accent); }
+  .lang-switch button:hover { color: var(--text); }
+  .lang-switch i { font-style:normal; color: var(--text-faint); font-weight:300; }
+  .nav-cta { font-family: var(--font-en); font-size:12px; font-weight:600; letter-spacing:.2em;
+    border:1px solid var(--line); padding:10px 20px; transition: all .3s; }
+  .nav-cta:hover { background:var(--accent); border-color:var(--accent); color:#03201c; }
+  .menu-toggle { display:none; background:none; border:none; color:var(--text); font-size:24px; cursor:pointer; }
+
+  /* ── Hero (video) ─────────────────── */
+  .hero {
+    min-height: 100vh;
+    display:flex; flex-direction:column; justify-content:center;
+    position:relative;
+    padding: 140px 0 80px;
+    overflow:hidden;
+  }
+  .hero-video {
+    position:absolute; inset:0;
+    width:100%; height:100%;
+    object-fit: cover;
+    z-index:0;
+  }
+  .hero-overlay {
+    position:absolute; inset:0; z-index:1;
+    background:
+      linear-gradient(to bottom, rgba(5,5,5,.55) 0%, rgba(5,5,5,.35) 45%, rgba(5,5,5,.92) 100%),
+      radial-gradient(ellipse 70% 60% at 30% 50%, rgba(5,5,5,.45), transparent 70%);
+  }
+  .hero .container { position:relative; z-index:2; }
+  .hero-eyebrow {
+    font-family: var(--font-en);
+    font-size: 13px; letter-spacing:.4em; text-transform:uppercase;
+    color: rgba(255,255,255,.75);
+    margin-bottom: 28px;
+    text-shadow: 0 1px 12px rgba(0,0,0,.5);
+  }
+  .hero h1 {
+    font-family: var(--font-en);
+    font-weight: 900;
+    font-size: clamp(46px, 8.5vw, 110px);
+    line-height: .98;
+    letter-spacing: -.02em;
+    text-transform: uppercase;
+    text-shadow: 0 2px 30px rgba(0,0,0,.55);
+  }
+  .hero h1 .outline {
+    color: transparent;
+    -webkit-text-stroke: 1.5px rgba(255,255,255,.6);
+  }
+  .hero h1 .accent { color: var(--accent); }
+  .hero-mission {
+    margin-top: 36px;
+    font-size: 17px; font-weight: 500;
+    color: var(--text);
+    text-shadow: 0 1px 14px rgba(0,0,0,.6);
+  }
+  .hero-desc {
+    margin-top: 12px;
+    max-width: 600px;
+    font-size: 15px; font-weight:300;
+    color: rgba(255,255,255,.72);
+    text-shadow: 0 1px 14px rgba(0,0,0,.6);
+  }
+  .hero-actions { margin-top: 44px; display:flex; gap:16px; flex-wrap:wrap; }
+  .hero-scroll {
+    position:absolute; bottom:34px; left:50%; transform:translateX(-50%); z-index:2;
+    font-family:var(--font-en); font-size:10px; letter-spacing:.3em; color:rgba(255,255,255,.5);
+    animation: float 2.2s ease-in-out infinite;
+  }
+  @keyframes float { 0%,100%{transform:translate(-50%,0)} 50%{transform:translate(-50%,8px)} }
+
+  /* ── Marquee strip ─────────────────── */
+  .strip {
+    border-top:1px solid var(--line); border-bottom:1px solid var(--line);
+    overflow:hidden; padding: 18px 0;
+    background: var(--bg-soft);
+  }
+  .strip-track {
+    display:flex; gap:64px; white-space:nowrap;
+    animation: marquee 32s linear infinite;
+    font-family:var(--font-en); font-size:13px; font-weight:600; letter-spacing:.3em; text-transform:uppercase;
+    color: var(--text-faint);
+  }
+  .strip-track span b { color: var(--accent); font-weight:600; }
+  @keyframes marquee { from{transform:translateX(0)} to{transform:translateX(-50%)} }
+
+  /* ── Sections ─────────────────────── */
+  section { padding: 130px 0; }
+  .sec-head { margin-bottom: 64px; }
+  .sec-head h2 {
+    font-family: var(--font-en);
+    font-weight: 800;
+    font-size: clamp(34px, 5vw, 60px);
+    text-transform: uppercase;
+    letter-spacing: -.01em;
+    line-height: 1.05;
+  }
+  .sec-head h2 em { font-style:normal; color:transparent; -webkit-text-stroke:1.2px rgba(255,255,255,.5); }
+  .sec-head p { margin-top: 20px; max-width: 560px; color: var(--text-dim); font-weight:300; font-size:15px; }
+
+  /* ── About ────────────────────────── */
+  .about-grid { display:grid; grid-template-columns: 1.1fr 1fr; gap: 72px; align-items:start; }
+  .about-text h3 { font-size: 24px; font-weight:700; margin-bottom: 20px; line-height:1.45; }
+  .about-text h3 span { color: var(--accent); }
+  .about-text p { color: var(--text-dim); font-weight:300; font-size:15px; margin-bottom: 16px; }
+  .values { display:grid; gap: 18px; }
+  .value {
+    border:1px solid var(--line);
+    background: var(--bg-card);
+    padding: 26px 28px;
+    display:flex; gap: 22px; align-items:flex-start;
+    transition: border-color .3s;
+  }
+  .value:hover { border-color: rgba(45,212,191,.5); }
+  .value b {
+    font-family:var(--font-en); font-size: 13px; font-weight:800; letter-spacing:.25em; text-transform:uppercase;
+    color: var(--accent); min-width: 90px; padding-top:2px;
+  }
+  .value div h4 { font-size: 17px; font-weight: 700; margin-bottom: 6px; }
+  .value div p { font-size: 13.5px; color: var(--text-dim); font-weight:300; }
+
+  /* ── Business ─────────────────────── */
+  .business { background: var(--bg-soft); border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
+  .biz-grid { display:grid; grid-template-columns:repeat(3,1fr); gap: 28px; }
+  .biz {
+    border:1px solid var(--line);
+    padding: 44px 36px;
+    background: var(--bg-card);
+    position: relative;
+    transition: transform .35s ease, border-color .3s;
+    display:flex; flex-direction:column;
+  }
+  .biz:hover { transform: translateY(-6px); border-color: rgba(45,212,191,.5); }
+  .biz-num { font-family:var(--font-en); font-size: 13px; font-weight:700; color: var(--accent); letter-spacing:.2em; }
+  .biz svg { width: 46px; height:46px; margin: 26px 0 20px; }
+  .biz h3 { font-size: 20px; font-weight:700; margin-bottom: 12px; line-height:1.4; }
+  .biz p { font-size: 14px; color: var(--text-dim); font-weight:300; flex:1; }
+  .biz small {
+    display:block; margin-top: 22px; padding-top: 16px; border-top: 1px solid var(--line);
+    font-family: var(--font-en); font-size: 10.5px; letter-spacing: .2em; text-transform: uppercase;
+    color: var(--text-faint);
+  }
+  .oem-note {
+    margin-top: 32px;
+    border: 1px dashed rgba(45,212,191,.4);
+    background: var(--accent-soft);
+    padding: 22px 28px;
+    display:flex; gap: 16px; align-items:center; flex-wrap:wrap;
+  }
+  .oem-note b { font-family:var(--font-en); letter-spacing:.15em; color: var(--accent); font-size: 14px; }
+  .oem-note span { font-size: 14px; color: var(--text-dim); font-weight: 300; }
+
+  /* ── Products ─────────────────────── */
+  .card-grid { display:grid; grid-template-columns:repeat(3,1fr); gap: 26px; }
+  .card {
+    background: var(--bg-card);
+    border: 1px solid var(--line);
+    transition: transform .35s ease, border-color .35s ease;
+    display:flex; flex-direction:column;
+  }
+  .card:hover { transform: translateY(-6px); border-color: rgba(45,212,191,.5); }
+  .card-img {
+    aspect-ratio: 16/8;
+    position:relative;
+    display:flex; align-items:center; justify-content:center;
+    border-bottom:1px solid var(--line);
+    overflow:hidden;
+  }
+  .card-img svg { width: 60px; height:60px; opacity:.92; }
+  .cg-1 { background: radial-gradient(circle at 50% 45%, rgba(45,212,191,.22), transparent 68%), #0a1413; }
+  .cg-2 { background: radial-gradient(circle at 50% 45%, rgba(244,164,206,.18), transparent 68%), #140a10; }
+  .cg-3 { background: radial-gradient(circle at 50% 45%, rgba(96,165,250,.2), transparent 68%), #0a0e14; }
+  .cg-4 { background: radial-gradient(circle at 50% 45%, rgba(167,139,250,.2), transparent 68%), #0e0a14; }
+  .cg-5 { background: radial-gradient(circle at 50% 45%, rgba(251,191,36,.16), transparent 68%), #14100a; }
+  .cg-6 { background: radial-gradient(circle at 50% 45%, rgba(52,211,153,.18), transparent 68%), #0a140e; }
+  .card-body { padding: 26px; display:flex; flex-direction:column; flex:1; }
+  .card-tag { font-family:var(--font-en); font-size:10px; letter-spacing:.3em; text-transform:uppercase; color:var(--accent); }
+  .card-body h3 { font-size: 19px; font-weight:700; margin: 10px 0 8px; }
+  .card-body p { font-size: 13.5px; color: var(--text-dim); font-weight:300; margin-bottom: 16px; flex:1; }
+  .card-brands {
+    font-family: var(--font-en);
+    font-size: 10.5px; letter-spacing: .12em; text-transform: uppercase;
+    color: var(--text-faint);
+    border-top: 1px solid var(--line);
+    padding-top: 14px;
+    line-height: 1.9;
+  }
+  .products-cta { margin-top: 48px; text-align:center; }
+  .products-cta p { color: var(--text-dim); font-size: 14px; font-weight:300; margin-bottom: 20px; }
+
+  /* ── Global ───────────────────────── */
+  .global { background: var(--bg-soft); border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
+  .global-grid { display:grid; grid-template-columns: repeat(5, 1fr); gap: 20px; }
+  .country {
+    border:1px solid var(--line);
+    background: var(--bg-card);
+    padding: 34px 20px;
+    text-align:center;
+    transition: border-color .3s, transform .35s ease;
+  }
+  .country:hover { border-color: rgba(45,212,191,.5); transform: translateY(-5px); }
+  .country .flag { font-size: 34px; display:block; margin-bottom: 14px; }
+  .country b { font-family:var(--font-en); font-size: 14px; font-weight:700; letter-spacing:.15em; text-transform:uppercase; display:block; }
+  .country small { font-size: 12px; color: var(--text-faint); }
+  .global-note { margin-top: 36px; text-align:center; color: var(--text-dim); font-size: 14px; font-weight:300; }
+  .global-note b { color: var(--accent); font-weight: 500; }
+
+  /* ── Contact ──────────────────────── */
+  .contact-grid { display:grid; grid-template-columns: 1fr 1.2fr; gap: 80px; }
+  .contact-quote { font-size: 18px; font-weight:400; color:var(--text-dim); margin-top: 28px; line-height:1.7; }
+  .contact-quote b { color: var(--text); font-weight:500; }
+  .contact-info { margin-top: 44px; display:grid; gap: 22px; }
+  .ci { border-top:1px solid var(--line); padding-top: 16px; }
+  .ci small { font-family:var(--font-en); font-size:10px; letter-spacing:.3em; text-transform:uppercase; color:var(--text-faint); display:block; margin-bottom:6px; }
+  .ci span { font-size: 15px; }
+  form { display:grid; gap: 26px; }
+  .form-row { display:grid; grid-template-columns:1fr 1fr; gap: 26px; }
+  .field label {
+    display:block;
+    font-family:var(--font-en); font-size:10px; font-weight:600; letter-spacing:.3em; text-transform:uppercase;
+    color: var(--text-dim); margin-bottom: 10px;
+  }
+  .field input, .field select, .field textarea {
+    width:100%;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid var(--line);
+    padding: 12px 2px;
+    color: var(--text);
+    font-family: var(--font-kr);
+    font-size: 15px;
+    transition: border-color .3s;
+  }
+  .field select { appearance:none; cursor:pointer; }
+  .field select option { background: var(--bg-card); }
+  .field textarea { resize:vertical; min-height:110px; }
+  .field input:focus, .field select:focus, .field textarea:focus { outline:none; border-color: var(--accent); }
+  .field input::placeholder, .field textarea::placeholder { color: var(--text-faint); font-size:13px; letter-spacing:.05em; }
+
+  /* ── Footer ───────────────────────── */
+  footer { border-top:1px solid var(--line); padding: 70px 0 34px; background: var(--bg); }
+  .foot-grid { display:grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 48px; margin-bottom: 56px; }
+  .foot-brand p { margin-top: 18px; font-size:13.5px; color: var(--text-dim); font-weight:300; max-width: 340px; }
+  .foot-social { display:flex; gap: 18px; margin-top: 24px; }
+  .foot-social a { font-family:var(--font-en); font-size:11px; font-weight:600; letter-spacing:.25em; text-transform:uppercase; color:var(--text-dim); transition:color .25s; }
+  .foot-social a:hover { color: var(--accent); }
+  .foot-col h4 { font-family:var(--font-en); font-size:11px; letter-spacing:.3em; text-transform:uppercase; color:var(--text-faint); margin-bottom: 20px; }
+  .foot-col ul { list-style:none; display:grid; gap: 12px; }
+  .foot-col a, .foot-col li { font-size: 14px; color: var(--text-dim); font-weight:300; }
+  .foot-col a:hover { color: var(--text); }
+  .foot-bottom {
+    border-top:1px solid var(--line); padding-top: 28px;
+    display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px;
+    font-family:var(--font-en); font-size:11px; letter-spacing:.15em; text-transform:uppercase; color:var(--text-faint);
+  }
+
+  /* ── Floating WhatsApp ────────────── */
+  .float-wa {
+    position: fixed; right: 26px; bottom: 26px; z-index: 200;
+    display:flex; align-items:center; gap: 12px;
+    text-decoration:none;
+  }
+  .float-wa .wa-label {
+    background: var(--bg-card);
+    border: 1px solid var(--line);
+    color: var(--text);
+    font-size: 13px; font-weight: 500;
+    padding: 10px 16px;
+    border-radius: 999px;
+    white-space: nowrap;
+    opacity: 0; transform: translateX(8px);
+    transition: opacity .3s ease, transform .3s ease;
+    pointer-events: none;
+    box-shadow: 0 8px 30px rgba(0,0,0,.45);
+  }
+  .float-wa:hover .wa-label { opacity: 1; transform: translateX(0); }
+  .float-wa .wa-btn {
+    width: 60px; height: 60px;
+    border-radius: 50%;
+    background: #25D366;
+    display:flex; align-items:center; justify-content:center;
+    box-shadow: 0 10px 30px rgba(37,211,102,.35), 0 4px 14px rgba(0,0,0,.4);
+    transition: transform .3s ease, box-shadow .3s ease;
+    position: relative;
+  }
+  .float-wa .wa-btn::after {
+    content:'';
+    position:absolute; inset:0;
+    border-radius:50%;
+    border: 2px solid rgba(37,211,102,.6);
+    animation: wa-pulse 2.4s ease-out infinite;
+  }
+  @keyframes wa-pulse {
+    0% { transform: scale(1); opacity: .8; }
+    70%, 100% { transform: scale(1.55); opacity: 0; }
+  }
+  .float-wa:hover .wa-btn { transform: scale(1.08); box-shadow: 0 14px 38px rgba(37,211,102,.5), 0 6px 18px rgba(0,0,0,.45); }
+  .float-wa .wa-btn svg { width: 32px; height: 32px; fill: #fff; }
+  @media (max-width: 620px) {
+    .float-wa { right: 18px; bottom: 18px; }
+    .float-wa .wa-btn { width: 54px; height: 54px; }
+    .float-wa .wa-label { display:none; }
+  }
+
+  /* ── Reveal animation ─────────────── */
+  .reveal { opacity:0; transform: translateY(34px); transition: opacity .9s cubic-bezier(.16,1,.3,1), transform .9s cubic-bezier(.16,1,.3,1); transition-delay: var(--d, 0s); }
+  .reveal.on { opacity:1; transform:none; }
+  .reveal-left { opacity:0; transform: translateX(-44px); transition: opacity .9s cubic-bezier(.16,1,.3,1), transform .9s cubic-bezier(.16,1,.3,1); transition-delay: var(--d, 0s); }
+  .reveal-left.on { opacity:1; transform:none; }
+  .reveal-right { opacity:0; transform: translateX(44px); transition: opacity .9s cubic-bezier(.16,1,.3,1), transform .9s cubic-bezier(.16,1,.3,1); transition-delay: var(--d, 0s); }
+  .reveal-right.on { opacity:1; transform:none; }
+  .reveal-zoom { opacity:0; transform: scale(.92) translateY(20px); transition: opacity .9s cubic-bezier(.16,1,.3,1), transform .9s cubic-bezier(.16,1,.3,1); transition-delay: var(--d, 0s); }
+  .reveal-zoom.on { opacity:1; transform:none; }
+  .hero .container { will-change: transform, opacity; }
+  .hero-video { will-change: transform; }
+  nav { transition: background .4s ease, box-shadow .4s ease; }
+  nav.scrolled { background: rgba(5,5,5,.95); box-shadow: 0 4px 30px rgba(0,0,0,.5); }
+  @media (prefers-reduced-motion: reduce) {
+    .reveal, .reveal-left, .reveal-right, .reveal-zoom { opacity:1 !important; transform:none !important; transition:none !important; }
+    .strip-track { animation: none; }
+  }
+
+  /* ── Responsive ───────────────────── */
+  @media (max-width: 1000px) {
+    .global-grid { grid-template-columns: repeat(3, 1fr); }
+    .card-grid { grid-template-columns: repeat(2, 1fr); }
+    .biz-grid { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 900px) {
+    .nav-links, .nav-cta { display:none; }
+    .menu-toggle { display:block; }
+    .nav-links.open {
+      display:flex; flex-direction:column; gap:0;
+      position:absolute; top:72px; left:0; right:0;
+      background: rgba(5,5,5,.97); border-bottom:1px solid var(--line);
+    }
+    .nav-links.open li { border-top:1px solid var(--line); }
+    .nav-links.open a { display:block; padding: 18px 6%; }
+    .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 48px; }
+    .form-row { grid-template-columns: 1fr; }
+    .foot-grid { grid-template-columns: 1fr; gap: 36px; }
+    section { padding: 90px 0; }
+  }
+  @media (max-width: 620px) {
+    .card-grid { grid-template-columns: 1fr; }
+    .global-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="#" class="logo">JOY<span>MEDIX</span></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#about">About</a></li>
+      <li><a href="#business">Business</a></li>
+      <li><a href="#products">Products</a></li>
+      <li><a href="#global">Global</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="nav-right">
+      <div class="lang-switch" role="group" aria-label="Language">
+        <button type="button" data-setlang="ko" id="langKo" class="active">KO</button>
+        <i>/</i>
+        <button type="button" data-setlang="en" id="langEn">EN</button>
+      </div>
+      <a href="#contact" class="nav-cta">GET IN TOUCH</a>
+      <button class="menu-toggle" id="menuToggle" aria-label="메뉴 열기">☰</button>
+    </div>
+  </div>
+</nav>
+
+<!-- ── HERO (video background) ── -->
+<header class="hero">
+  <video class="hero-video" autoplay muted loop playsinline preload="auto">
+    <source src="Joy.mp4" type="video/mp4">
+  </video>
+  <div class="hero-overlay"></div>
+  <div class="container">
+    <p class="hero-eyebrow">K-Medical &amp; Beauty Global Specialist</p>
+    <h1>
+      <span class="outline">K-Medical &amp; Beauty</span><br>
+      <span style="font-weight:300; font-size:.42em; letter-spacing:.03em; display:inline-block; margin:16px 0 8px;">Go Forward with</span><br>
+      <span class="accent">JOYMEDIX</span>
+    </h1>
+    <p class="hero-mission" data-i18n="hero_mission">신뢰 · 정직 · 상생의 가치로 K-Medical의 우수성을 세계에 전합니다.</p>
+    <p class="hero-desc" data-i18n="hero_desc">조이소아과를 모체로 탄생한 JOYMEDIX는 메디컬·의료기기·뷰티 제품의 유통과 수출, 클리닉 개원 컨설팅, K-뷰티션 해외 파견까지 — K-Medical &amp; Beauty의 글로벌 허브입니다.</p>
+    <div class="hero-actions">
+      <a href="#contact" class="btn solid" data-i18n="btn_contact">[ 문의하기 ]</a>
+      <a href="#products" class="btn" data-i18n="btn_catalog">[ 제품 카탈로그 ]</a>
+    </div>
+  </div>
+  <span class="hero-scroll">SCROLL ▼</span>
+</header>
+
+<!-- ── MARQUEE ── -->
+<div class="strip" aria-hidden="true">
+  <div class="strip-track">
+    <span>K-Medical <b>✚</b></span><span>K-Beauty <b>✚</b></span><span>Global Export <b>✚</b></span><span>Clinic Consulting <b>✚</b></span><span>OEM · ODM <b>✚</b></span><span>Joymedix <b>✚</b></span>
+    <span>K-Medical <b>✚</b></span><span>K-Beauty <b>✚</b></span><span>Global Export <b>✚</b></span><span>Clinic Consulting <b>✚</b></span><span>OEM · ODM <b>✚</b></span><span>Joymedix <b>✚</b></span>
+  </div>
+</div>
+
+<!-- ── ABOUT ── -->
+<section id="about">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="label">About Joymedix</span>
+      <h2>From Clinic,<br><em>To The World</em></h2>
+    </div>
+    <div class="about-grid">
+      <div class="about-text reveal">
+        <h3 data-i18n="about_h3">조이소아과를 모체로 탄생한<br><span>K-Medical &amp; Beauty 전문 기업</span></h3>
+        <p data-i18n="about_p1">JOYMEDIX는 소아청소년과 진료 현장에서 쌓아온 의학적 전문성과 신뢰를 바탕으로 출발했습니다. 의료 현장을 가장 잘 아는 기업으로서, 검증된 K-Medical &amp; Beauty 제품과 서비스를 세계 시장에 연결합니다.</p>
+        <p data-i18n="about_p2">메디컬·의료기기·뷰티 제품의 유통과 수출부터, 비만·성장·피부 클리닉의 현지 개원 컨설팅, 한국의 우수한 뷰티션 해외 파견까지 — 의료와 뷰티를 아우르는 토탈 솔루션을 제공합니다.</p>
+        <p data-i18n="about_p3">현재 캐나다, 미국, 몽골, 일본, 호주의 파트너와 함께 성장하고 있습니다.</p>
+      </div>
+      <div class="values reveal">
+        <div class="value">
+          <b>Trust</b>
+          <div>
+            <h4 data-i18n="val1_t">신뢰</h4>
+            <p data-i18n="val1_d">의료 현장에서 시작된 기업으로서, 검증된 제품과 정확한 정보만을 파트너에게 전달합니다.</p>
+          </div>
+        </div>
+        <div class="value">
+          <b>Honesty</b>
+          <div>
+            <h4 data-i18n="val2_t">정직</h4>
+            <p data-i18n="val2_d">투명한 거래와 정직한 소통으로 파트너와의 약속을 지킵니다.</p>
+          </div>
+        </div>
+        <div class="value">
+          <b>Win-Win</b>
+          <div>
+            <h4 data-i18n="val3_t">상생</h4>
+            <p data-i18n="val3_d">파트너의 성공이 곧 우리의 성공입니다. 함께 성장하는 지속 가능한 파트너십을 추구합니다.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── BUSINESS ── -->
+<section class="business" id="business">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="label">Our Business</span>
+      <h2>Three Pillars of <em>Joymedix</em></h2>
+      <p data-i18n="biz_lead">제품 수출에서 개원 컨설팅, 인력 파견까지 — K-Medical &amp; Beauty 비즈니스의 전 과정을 함께합니다.</p>
+    </div>
+    <div class="biz-grid">
+      <div class="biz reveal">
+        <span class="biz-num">01</span>
+        <svg viewBox="0 0 64 64" fill="none" stroke="#2dd4bf" stroke-width="2"><circle cx="32" cy="32" r="22"/><path d="M10 32h44M32 10c6 6 9 14 9 22s-3 16-9 22c-6-6-9-14-9-22s3-16 9-22z" stroke-linecap="round"/></svg>
+        <h3 data-i18n="biz1_t">메디컬 · 의료기기 · 뷰티 제품<br>유통 및 수출</h3>
+        <p data-i18n="biz1_d">스킨부스터, 필러·보톡스, MD크림, 더마 코스메틱, IV 솔루션 등 검증된 K-Medical &amp; Beauty 제품을 전 세계 클리닉과 바이어에게 공급합니다.</p>
+        <small>Distribution &amp; Export</small>
+      </div>
+      <div class="biz reveal">
+        <span class="biz-num">02</span>
+        <svg viewBox="0 0 64 64" fill="none" stroke="#2dd4bf" stroke-width="2"><rect x="14" y="22" width="36" height="30" rx="2"/><path d="M26 22v-8h12v8M32 30v12M26 36h12" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <h3 data-i18n="biz2_t">비만 · 성장 · 피부 클리닉<br>현지 개원 컨설팅</h3>
+        <p data-i18n="biz2_d">조이소아과의 진료 노하우를 바탕으로 비만, 성장, 피부 클리닉의 해외 현지 개원을 처음부터 끝까지 컨설팅합니다. 진료 시스템, 장비, 제품 셋업까지 원스톱으로 지원합니다.</p>
+        <small>Clinic Setup Consulting</small>
+      </div>
+      <div class="biz reveal">
+        <span class="biz-num">03</span>
+        <svg viewBox="0 0 64 64" fill="none" stroke="#2dd4bf" stroke-width="2"><circle cx="32" cy="20" r="8"/><path d="M16 52c0-9 7-16 16-16s16 7 16 16M44 24l6-6M50 30l8-8" stroke-linecap="round"/></svg>
+        <h3 data-i18n="biz3_t">K-뷰티션<br>해외 클리닉 파견</h3>
+        <p data-i18n="biz3_d">한국의 우수한 뷰티션(에스테티션)을 해외 클리닉에 파견하여, K-Beauty의 섬세한 케어 노하우를 현지에서 그대로 구현합니다.</p>
+        <small>Beautician Dispatch</small>
+      </div>
+    </div>
+    <div class="oem-note reveal">
+      <b>+ OEM / ODM</b>
+      <span data-i18n="oem_txt">바이어가 원하는 제품이 있다면, 한국 제조사 네트워크를 통한 OEM/ODM 생산도 가능합니다.</span>
+    </div>
+  </div>
+</section>
+
+<!-- ── PRODUCTS ── -->
+<section id="products">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="label">Product Catalog</span>
+      <h2>What We <em>Supply</em></h2>
+      <p data-i18n="prod_lead">MD크림부터 스킨부스터, 필러, IV 솔루션까지 — 클리닉 운영에 필요한 모든 카테고리를 취급합니다.</p>
+    </div>
+    <div class="card-grid">
+      <div class="card reveal">
+        <div class="card-img cg-1">
+          <svg viewBox="0 0 64 64" fill="none" stroke="#2dd4bf" stroke-width="2"><rect x="18" y="24" width="28" height="26" rx="4"/><path d="M24 24v-6a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4v6M32 32v10M27 37h10" stroke-linecap="round"/></svg>
+        </div>
+        <div class="card-body">
+          <span class="card-tag">MD Cream</span>
+          <h3 data-i18n="p1_t">MD 크림 · 의료기기 등급</h3>
+          <p data-i18n="p1_d">피부 장벽 보호용 의료기기 등급 크림·로션 라인업. 아토피, 민감성, 시술 후 피부까지.</p>
+          <div class="card-brands">Zeroid · Aestura · Madeca MD · Rejuran · Easydew</div>
+        </div>
+      </div>
+      <div class="card reveal">
+        <div class="card-img cg-2">
+          <svg viewBox="0 0 64 64" fill="none" stroke="#f4a4ce" stroke-width="2"><path d="M24 26h16l3 24H21l3-24z" stroke-linejoin="round"/><path d="M27 26v-5a5 5 0 0 1 10 0v5M28 38c2 2 6 2 8 0" stroke-linecap="round"/></svg>
+        </div>
+        <div class="card-body">
+          <span class="card-tag">Dermo Cosmetics</span>
+          <h3 data-i18n="p2_t">더마 코스메틱</h3>
+          <p data-i18n="p2_d">클리닉 전용 스킨케어부터 홈케어까지, 검증된 K-더마 브랜드의 정품 라인업.</p>
+          <div class="card-brands">Rejuran · ASCE+ · Ellie Grace · Vitaran · Cell by Cell · Kiwiglow</div>
+        </div>
+      </div>
+      <div class="card reveal">
+        <div class="card-img cg-3">
+          <svg viewBox="0 0 64 64" fill="none" stroke="#60a5fa" stroke-width="2"><path d="M40 14 22 32l-4 14 14-4 18-18-10-10zM36 18l10 10" stroke-linecap="round" stroke-linejoin="round"/><path d="M14 54h36" stroke-linecap="round"/></svg>
+        </div>
+        <div class="card-body">
+          <span class="card-tag">Skin Boosters &amp; Injectables</span>
+          <h3 data-i18n="p3_t">스킨부스터 · 주사제</h3>
+          <p data-i18n="p3_d">피부 재생·탄력·미백 스킨부스터와 탈모, 지방분해 등 시술용 주사제 전문 공급.</p>
+          <div class="card-brands">Rejuran Healer · Juvelook · ASCE+ · Sculptra · Gouri · Ultracol</div>
+        </div>
+      </div>
+      <div class="card reveal">
+        <div class="card-img cg-4">
+          <svg viewBox="0 0 64 64" fill="none" stroke="#a78bfa" stroke-width="2"><path d="M28 12h8v10l6 4v26H22V26l6-4V12z" stroke-linejoin="round"/><path d="M22 36h20" stroke-linecap="round"/></svg>
+        </div>
+        <div class="card-body">
+          <span class="card-tag">Botox &amp; Filler</span>
+          <h3 data-i18n="p4_t">보톡스 · 필러</h3>
+          <p data-i18n="p4_d">글로벌 정품 더말 필러, 바디 필러, 리포리시스 등 130여 종의 폭넓은 라인업.</p>
+          <div class="card-brands">Restylane · Juvederm · Neuramis · Revolax · Belotero · Elasty</div>
+        </div>
+      </div>
+      <div class="card reveal">
+        <div class="card-img cg-5">
+          <svg viewBox="0 0 64 64" fill="none" stroke="#fbbf24" stroke-width="2"><path d="M24 10v14l-8 22a6 6 0 0 0 6 8h20a6 6 0 0 0 6-8l-8-22V10" stroke-linejoin="round"/><path d="M20 10h24M20 40h24" stroke-linecap="round"/></svg>
+        </div>
+        <div class="card-body">
+          <span class="card-tag">IV Therapy</span>
+          <h3 data-i18n="p5_t">IV 솔루션 · 수액</h3>
+          <p data-i18n="p5_d">백옥·신데렐라 주사 등 미용 수액부터 영양·면역 IV 솔루션까지 50여 종 공급.</p>
+          <div class="card-brands">Luthione · Cindella · Laennec · Melsmon · Vitamin C</div>
+        </div>
+      </div>
+      <div class="card reveal">
+        <div class="card-img cg-6">
+          <svg viewBox="0 0 64 64" fill="none" stroke="#34d399" stroke-width="2"><circle cx="32" cy="32" r="20"/><path d="M32 22v20M22 32h20" stroke-linecap="round"/></svg>
+        </div>
+        <div class="card-body">
+          <span class="card-tag">Topicals &amp; Supplements</span>
+          <h3 data-i18n="p6_t">연고 · 건강기능식품</h3>
+          <p data-i18n="p6_d">흉터·색소·마취 크림 등 클리닉 필수 연고와 비만·혈당·이너뷰티 건기식 라인업.</p>
+          <div class="card-brands">Noscarna · Madecassol · Lidocan · Wegovy · Mounjaro</div>
+        </div>
+      </div>
+    </div>
+    <div class="products-cta reveal">
+      <p data-i18n="prod_cta_p">전체 제품 카탈로그(400여 종)는 문의 시 브로셔로 보내드립니다.</p>
+      <a href="#contact" class="btn" data-i18n="prod_cta_btn">[ 카탈로그 요청하기 ]</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── GLOBAL ── -->
+<section class="global" id="global">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="label">Global Network</span>
+      <h2>Partners <em>Worldwide</em></h2>
+      <p data-i18n="glob_lead">북미에서 오세아니아까지, 5개국 파트너와 함께 K-Medical &amp; Beauty를 전하고 있습니다.</p>
+    </div>
+    <div class="global-grid">
+      <div class="country reveal"><span class="flag">🇨🇦</span><b>Canada</b><small data-i18n="c_ca">캐나다</small></div>
+      <div class="country reveal"><span class="flag">🇺🇸</span><b>USA</b><small data-i18n="c_us">미국</small></div>
+      <div class="country reveal"><span class="flag">🇲🇳</span><b>Mongolia</b><small data-i18n="c_mn">몽골</small></div>
+      <div class="country reveal"><span class="flag">🇯🇵</span><b>Japan</b><small data-i18n="c_jp">일본</small></div>
+      <div class="country reveal"><span class="flag">🇦🇺</span><b>Australia</b><small data-i18n="c_au">호주</small></div>
+    </div>
+    <p class="global-note reveal" data-i18n="glob_note">새로운 파트너를 기다립니다 — <b>어느 지역이든, JOYMEDIX가 찾아갑니다.</b></p>
+  </div>
+</section>
+
+<!-- ── CONTACT ── -->
+<section id="contact">
+  <div class="container">
+    <div class="contact-grid">
+      <div class="reveal">
+        <span class="label">Business Inquiry</span>
+        <h2 style="font-family:var(--font-en); font-weight:800; font-size:clamp(34px,5vw,56px); text-transform:uppercase; line-height:1.05;">Get In<br>Touch</h2>
+        <p class="contact-quote" data-i18n="ct_quote">"제품 수입, 클리닉 개원, 뷰티션 파견, OEM/ODM —<br><b>JOYMEDIX</b>가 함께하겠습니다."</p>
+        <div class="contact-info">
+          <div class="ci"><small>Email</small><span><a href="mailto:jykhl79@gmail.com">jykhl79@gmail.com</a></span></div>
+          <div class="ci"><small>WhatsApp</small><span><a href="https://wa.me/821081460279" target="_blank" rel="noopener">+82 10-8146-0279</a></span></div>
+          <div class="ci"><small>Address</small><span data-i18n="ci_addr">경기도 파주시 해올1길 12, 201호 (다율동, SD드림스퀘어)</span></div>
+        </div>
+      </div>
+      <form class="reveal" id="inquiryForm">
+        <div class="form-row">
+          <div class="field">
+            <label for="f-name" data-i18n="f_name_l">성함 / Full Name</label>
+            <input id="f-name" name="name" type="text" data-i18n-ph="f_name_ph" placeholder="성함을 입력해주세요" required>
+          </div>
+          <div class="field">
+            <label for="f-company" data-i18n="f_company_l">회사명 / Company</label>
+            <input id="f-company" name="company" type="text" data-i18n-ph="f_company_ph" placeholder="회사명 또는 클리닉명">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="field">
+            <label for="f-email" data-i18n="f_email_l">이메일 / Email</label>
+            <input id="f-email" name="email" type="email" placeholder="email@domain.com" required>
+          </div>
+          <div class="field">
+            <label for="f-region" data-i18n="f_region_l">국가 · 지역 / Region</label>
+            <select id="f-region" name="region">
+              <option data-i18n="r_kr">대한민국 / South Korea</option>
+              <option data-i18n="r_ca">캐나다 / Canada</option>
+              <option data-i18n="r_us">미국 / USA</option>
+              <option data-i18n="r_mn">몽골 / Mongolia</option>
+              <option data-i18n="r_jp">일본 / Japan</option>
+              <option data-i18n="r_au">호주 / Australia</option>
+              <option data-i18n="r_etc">기타 / Other</option>
+            </select>
+          </div>
+        </div>
+        <div class="field">
+          <label for="f-type" data-i18n="f_type_l">문의 유형 / Inquiry Type</label>
+          <select id="f-type" name="type">
+            <option data-i18n="t_1">제품 수입 · 공급 문의</option>
+            <option data-i18n="t_2">제품 카탈로그(브로셔) 요청</option>
+            <option data-i18n="t_3">클리닉 개원 컨설팅</option>
+            <option data-i18n="t_4">뷰티션 파견 문의</option>
+            <option data-i18n="t_5">OEM / ODM 문의</option>
+            <option data-i18n="t_6">기타 문의</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="f-msg" data-i18n="f_msg_l">문의 내용 / Message</label>
+          <textarea id="f-msg" name="message" data-i18n-ph="f_msg_ph" placeholder="관심 제품, 수량, 지역 등 문의 내용을 자세히 적어주세요." required></textarea>
+        </div>
+        <button type="submit" class="btn solid" style="justify-self:start;" data-i18n="btn_send">[ 문의 보내기 ]</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="container">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a href="#" class="logo">JOY<span>MEDIX</span></a>
+        <p data-i18n="foot_brand">"신뢰 · 정직 · 상생"<br>조이소아과를 모체로 탄생한 K-Medical &amp; Beauty 전문 기업. 검증된 제품과 서비스로 파트너와 함께 성장합니다.</p>
+        <div class="foot-social">
+          <a href="https://wa.me/821081460279" target="_blank" rel="noopener" aria-label="WhatsApp">WhatsApp</a>
+          <a href="https://www.instagram.com/joymedix/" target="_blank" rel="noopener" aria-label="Instagram">Instagram</a>
+          <a href="#" aria-label="Blog">Blog</a>
+          <a href="#" aria-label="LinkedIn">LinkedIn</a>
+        </div>
+      </div>
+      <div class="foot-col">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#business">Business</a></li>
+          <li><a href="#products">Products</a></li>
+          <li><a href="#global">Global Network</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>Company</h4>
+        <ul>
+          <li data-i18n="foot_co">주식회사 조이메딕스</li>
+          <li data-i18n="foot_ceo">대표 : 배진영</li>
+          <li data-i18n="foot_bizno">사업자등록번호 : 666-88-03839</li>
+          <li data-i18n="foot_addr">경기도 파주시 해올1길 12, 201호</li>
+          <li><a href="mailto:jykhl79@gmail.com">jykhl79@gmail.com</a></li>
+          <li><a href="https://wa.me/821081460279" target="_blank" rel="noopener">WhatsApp +82 10-8146-0279</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 JOYMEDIX. All Rights Reserved.</span>
+      <span>K-Medical &amp; Beauty, From Clinic To The World</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ── FLOATING WHATSAPP ── -->
+<a class="float-wa" href="https://wa.me/821081460279" target="_blank" rel="noopener" aria-label="WhatsApp">
+  <span class="wa-label" data-i18n="wa_label">WhatsApp으로 문의하기</span>
+  <span class="wa-btn">
+    <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><path d="M16.004 3.2c-7.06 0-12.8 5.74-12.8 12.8 0 2.26.59 4.46 1.71 6.4L3.2 28.8l6.58-1.67a12.74 12.74 0 0 0 6.22 1.6h.01c7.06 0 12.79-5.74 12.79-12.8 0-3.42-1.33-6.63-3.75-9.05a12.72 12.72 0 0 0-9.05-3.68zm0 23.36h-.01a10.6 10.6 0 0 1-5.4-1.48l-.39-.23-4.02 1.02 1.07-3.92-.25-.4a10.57 10.57 0 0 1-1.63-5.65c0-5.87 4.78-10.64 10.66-10.64 2.84 0 5.51 1.11 7.52 3.12a10.57 10.57 0 0 1 3.11 7.53c0 5.87-4.78 10.65-10.66 10.65zm5.84-7.97c-.32-.16-1.89-.93-2.19-1.04-.29-.11-.5-.16-.72.16-.21.32-.82 1.04-1.01 1.25-.18.21-.37.24-.69.08-.32-.16-1.35-.5-2.57-1.59-.95-.85-1.59-1.9-1.78-2.22-.18-.32-.02-.49.14-.65.15-.14.32-.37.48-.56.16-.19.21-.32.32-.53.11-.21.05-.4-.03-.56-.08-.16-.72-1.73-.98-2.37-.26-.62-.52-.54-.72-.55h-.61c-.21 0-.56.08-.85.4-.29.32-1.12 1.09-1.12 2.66 0 1.57 1.14 3.08 1.3 3.29.16.21 2.25 3.44 5.45 4.82.76.33 1.36.53 1.82.67.77.24 1.46.21 2.01.13.61-.09 1.89-.77 2.16-1.52.27-.75.27-1.39.19-1.52-.08-.13-.29-.21-.61-.37z"/></svg>
+  </span>
+</a>
+
+<script>
+  /* ─────────────────────────────────────────
+     다국어 (KO / EN)
+  ───────────────────────────────────────── */
+  const I18N = {
+    ko: {
+      _title: 'JOYMEDIX - K-Medical & Beauty 전문기업',
+      hero_mission: '신뢰 · 정직 · 상생의 가치로 K-Medical의 우수성을 세계에 전합니다.',
+      hero_desc: '조이소아과를 모체로 탄생한 JOYMEDIX는 메디컬·의료기기·뷰티 제품의 유통과 수출, 클리닉 개원 컨설팅, K-뷰티션 해외 파견까지 — K-Medical &amp; Beauty의 글로벌 허브입니다.',
+      btn_contact: '[ 문의하기 ]',
+      btn_catalog: '[ 제품 카탈로그 ]',
+      about_h3: '조이소아과를 모체로 탄생한<br><span>K-Medical &amp; Beauty 전문 기업</span>',
+      about_p1: 'JOYMEDIX는 소아청소년과 진료 현장에서 쌓아온 의학적 전문성과 신뢰를 바탕으로 출발했습니다. 의료 현장을 가장 잘 아는 기업으로서, 검증된 K-Medical &amp; Beauty 제품과 서비스를 세계 시장에 연결합니다.',
+      about_p2: '메디컬·의료기기·뷰티 제품의 유통과 수출부터, 비만·성장·피부 클리닉의 현지 개원 컨설팅, 한국의 우수한 뷰티션 해외 파견까지 — 의료와 뷰티를 아우르는 토탈 솔루션을 제공합니다.',
+      about_p3: '현재 캐나다, 미국, 몽골, 일본, 호주의 파트너와 함께 성장하고 있습니다.',
+      val1_t: '신뢰', val1_d: '의료 현장에서 시작된 기업으로서, 검증된 제품과 정확한 정보만을 파트너에게 전달합니다.',
+      val2_t: '정직', val2_d: '투명한 거래와 정직한 소통으로 파트너와의 약속을 지킵니다.',
+      val3_t: '상생', val3_d: '파트너의 성공이 곧 우리의 성공입니다. 함께 성장하는 지속 가능한 파트너십을 추구합니다.',
+      biz_lead: '제품 수출에서 개원 컨설팅, 인력 파견까지 — K-Medical &amp; Beauty 비즈니스의 전 과정을 함께합니다.',
+      biz1_t: '메디컬 · 의료기기 · 뷰티 제품<br>유통 및 수출',
+      biz1_d: '스킨부스터, 필러·보톡스, MD크림, 더마 코스메틱, IV 솔루션 등 검증된 K-Medical &amp; Beauty 제품을 전 세계 클리닉과 바이어에게 공급합니다.',
+      biz2_t: '비만 · 성장 · 피부 클리닉<br>현지 개원 컨설팅',
+      biz2_d: '조이소아과의 진료 노하우를 바탕으로 비만, 성장, 피부 클리닉의 해외 현지 개원을 처음부터 끝까지 컨설팅합니다. 진료 시스템, 장비, 제품 셋업까지 원스톱으로 지원합니다.',
+      biz3_t: 'K-뷰티션<br>해외 클리닉 파견',
+      biz3_d: '한국의 우수한 뷰티션(에스테티션)을 해외 클리닉에 파견하여, K-Beauty의 섬세한 케어 노하우를 현지에서 그대로 구현합니다.',
+      oem_txt: '바이어가 원하는 제품이 있다면, 한국 제조사 네트워크를 통한 OEM/ODM 생산도 가능합니다.',
+      prod_lead: 'MD크림부터 스킨부스터, 필러, IV 솔루션까지 — 클리닉 운영에 필요한 모든 카테고리를 취급합니다.',
+      p1_t: 'MD 크림 · 의료기기 등급', p1_d: '피부 장벽 보호용 의료기기 등급 크림·로션 라인업. 아토피, 민감성, 시술 후 피부까지.',
+      p2_t: '더마 코스메틱', p2_d: '클리닉 전용 스킨케어부터 홈케어까지, 검증된 K-더마 브랜드의 정품 라인업.',
+      p3_t: '스킨부스터 · 주사제', p3_d: '피부 재생·탄력·미백 스킨부스터와 탈모, 지방분해 등 시술용 주사제 전문 공급.',
+      p4_t: '보톡스 · 필러', p4_d: '글로벌 정품 더말 필러, 바디 필러, 리포리시스 등 130여 종의 폭넓은 라인업.',
+      p5_t: 'IV 솔루션 · 수액', p5_d: '백옥·신데렐라 주사 등 미용 수액부터 영양·면역 IV 솔루션까지 50여 종 공급.',
+      p6_t: '연고 · 건강기능식품', p6_d: '흉터·색소·마취 크림 등 클리닉 필수 연고와 비만·혈당·이너뷰티 건기식 라인업.',
+      prod_cta_p: '전체 제품 카탈로그(400여 종)는 문의 시 브로셔로 보내드립니다.',
+      prod_cta_btn: '[ 카탈로그 요청하기 ]',
+      glob_lead: '북미에서 오세아니아까지, 5개국 파트너와 함께 K-Medical &amp; Beauty를 전하고 있습니다.',
+      c_ca: '캐나다', c_us: '미국', c_mn: '몽골', c_jp: '일본', c_au: '호주',
+      glob_note: '새로운 파트너를 기다립니다 — <b>어느 지역이든, JOYMEDIX가 찾아갑니다.</b>',
+      ct_quote: '"제품 수입, 클리닉 개원, 뷰티션 파견, OEM/ODM —<br><b>JOYMEDIX</b>가 함께하겠습니다."',
+      ci_addr: '경기도 파주시 해올1길 12, 201호 (다율동, SD드림스퀘어)',
+      f_name_l: '성함 / Full Name', f_name_ph: '성함을 입력해주세요',
+      f_company_l: '회사명 / Company', f_company_ph: '회사명 또는 클리닉명',
+      f_email_l: '이메일 / Email',
+      f_region_l: '국가 · 지역 / Region',
+      r_kr: '대한민국 / South Korea', r_ca: '캐나다 / Canada', r_us: '미국 / USA',
+      r_mn: '몽골 / Mongolia', r_jp: '일본 / Japan', r_au: '호주 / Australia', r_etc: '기타 / Other',
+      f_type_l: '문의 유형 / Inquiry Type',
+      t_1: '제품 수입 · 공급 문의', t_2: '제품 카탈로그(브로셔) 요청', t_3: '클리닉 개원 컨설팅',
+      t_4: '뷰티션 파견 문의', t_5: 'OEM / ODM 문의', t_6: '기타 문의',
+      f_msg_l: '문의 내용 / Message', f_msg_ph: '관심 제품, 수량, 지역 등 문의 내용을 자세히 적어주세요.',
+      btn_send: '[ 문의 보내기 ]',
+      btn_sending: '[ 전송 중... ]',
+      alert_sent: '문의가 접수되었습니다. 빠른 시일 내에 연락드리겠습니다.',
+      foot_brand: '"신뢰 · 정직 · 상생"<br>조이소아과를 모체로 탄생한 K-Medical &amp; Beauty 전문 기업. 검증된 제품과 서비스로 파트너와 함께 성장합니다.',
+      foot_co: '주식회사 조이메딕스',
+      foot_ceo: '대표 : 배진영',
+      foot_bizno: '사업자등록번호 : 666-88-03839',
+      foot_addr: '경기도 파주시 해올1길 12, 201호',
+      wa_label: 'WhatsApp으로 문의하기'
+    },
+    en: {
+      _title: 'JOYMEDIX - K-Medical & Beauty Global Specialist',
+      hero_mission: 'With trust, honesty, and win-win partnership, we bring the excellence of K-Medical to the world.',
+      hero_desc: 'Born from Joy Pediatric Clinic, JOYMEDIX is a global hub for K-Medical &amp; Beauty — from distribution and export of medical, device, and beauty products to clinic setup consulting and dispatching top Korean beauticians to clinics abroad.',
+      btn_contact: '[ Contact Us ]',
+      btn_catalog: '[ Product Catalog ]',
+      about_h3: 'A K-Medical &amp; Beauty specialist<br><span>born from Joy Pediatric Clinic</span>',
+      about_p1: 'JOYMEDIX was founded on the medical expertise and trust built through years of pediatric clinical practice. As a company that truly understands the clinical field, we connect proven K-Medical &amp; Beauty products and services to the global market.',
+      about_p2: 'From distribution and export of medical, device, and beauty products, to on-site setup consulting for obesity, growth, and dermatology clinics, and dispatching Korea\'s finest beauticians overseas — we provide a total solution across medical and beauty.',
+      about_p3: 'We are currently growing together with partners in Canada, the USA, Mongolia, Japan, and Australia.',
+      val1_t: 'Trust', val1_d: 'As a company born in the clinical field, we deliver only verified products and accurate information to our partners.',
+      val2_t: 'Honesty', val2_d: 'We keep our promises through transparent transactions and honest communication.',
+      val3_t: 'Win-Win', val3_d: 'Our partners\' success is our success. We pursue sustainable partnerships where we grow together.',
+      biz_lead: 'From product export to clinic setup consulting and staff dispatch — we cover the entire K-Medical &amp; Beauty business journey.',
+      biz1_t: 'Medical · Device · Beauty Products<br>Distribution &amp; Export',
+      biz1_d: 'We supply proven K-Medical &amp; Beauty products — skin boosters, fillers &amp; botulinum toxins, MD creams, dermo cosmetics, and IV solutions — to clinics and buyers worldwide.',
+      biz2_t: 'Obesity · Growth · Skin Clinic<br>Setup Consulting',
+      biz2_d: 'Leveraging the clinical know-how of Joy Pediatric Clinic, we consult on overseas clinic openings from start to finish — treatment systems, equipment, and product setup, all in one place.',
+      biz3_t: 'K-Beautician<br>Overseas Dispatch',
+      biz3_d: 'We dispatch Korea\'s top beauticians (estheticians) to overseas clinics, bringing the refined care techniques of K-Beauty directly to your location.',
+      oem_txt: 'Looking for a specific product? OEM/ODM production is also available through our network of Korean manufacturers.',
+      prod_lead: 'From MD creams to skin boosters, fillers, and IV solutions — we carry every category a clinic needs.',
+      p1_t: 'MD Cream · Medical Grade', p1_d: 'Medical-device-grade creams and lotions for skin barrier protection — for atopic, sensitive, and post-procedure skin.',
+      p2_t: 'Dermo Cosmetics', p2_d: 'Authentic lineups from proven K-derma brands, from clinic-exclusive skincare to home care.',
+      p3_t: 'Skin Boosters · Injectables', p3_d: 'Skin boosters for regeneration, elasticity, and brightening, plus professional injectables for hair loss and lipolysis.',
+      p4_t: 'Botox · Filler', p4_d: 'A wide lineup of 130+ authentic dermal fillers, body fillers, and lipolysis products from global brands.',
+      p5_t: 'IV Solutions', p5_d: '50+ IV therapy products, from aesthetic infusions like glutathione to nutrition and immunity solutions.',
+      p6_t: 'Topicals · Supplements', p6_d: 'Clinic-essential topicals for scars, pigmentation, and numbing, plus supplements for weight, blood sugar, and inner beauty.',
+      prod_cta_p: 'The full product catalog (400+ items) is available as a brochure upon request.',
+      prod_cta_btn: '[ Request Catalog ]',
+      glob_lead: 'From North America to Oceania, we deliver K-Medical &amp; Beauty with partners in five countries.',
+      c_ca: 'North America', c_us: 'North America', c_mn: 'Central Asia', c_jp: 'East Asia', c_au: 'Oceania',
+      glob_note: 'We are looking for new partners — <b>wherever you are, JOYMEDIX will reach you.</b>',
+      ct_quote: '"Product import, clinic setup, beautician dispatch, OEM/ODM —<br><b>JOYMEDIX</b> is with you."',
+      ci_addr: '#201, 12 Haeol 1-gil, Paju-si, Gyeonggi-do, Republic of Korea',
+      f_name_l: 'Full Name', f_name_ph: 'Enter your name',
+      f_company_l: 'Company', f_company_ph: 'Company or clinic name',
+      f_email_l: 'Email',
+      f_region_l: 'Country / Region',
+      r_kr: 'South Korea', r_ca: 'Canada', r_us: 'USA',
+      r_mn: 'Mongolia', r_jp: 'Japan', r_au: 'Australia', r_etc: 'Other',
+      f_type_l: 'Inquiry Type',
+      t_1: 'Product Import / Supply', t_2: 'Request Product Catalog', t_3: 'Clinic Setup Consulting',
+      t_4: 'Beautician Dispatch', t_5: 'OEM / ODM', t_6: 'Other Inquiry',
+      f_msg_l: 'Message', f_msg_ph: 'Please describe products of interest, volume, region, and other details.',
+      btn_send: '[ Send Inquiry ]',
+      btn_sending: '[ Sending... ]',
+      alert_sent: 'Your inquiry has been received. We will get back to you shortly.',
+      foot_brand: '"Trust · Honesty · Win-Win"<br>A K-Medical &amp; Beauty specialist born from Joy Pediatric Clinic. Growing together with our partners through proven products and services.',
+      foot_co: 'Joymedix Co., Ltd.',
+      foot_ceo: 'CEO : Jinyoung Bae',
+      foot_bizno: 'Business Reg. No. : 666-88-03839',
+      foot_addr: '#201, 12 Haeol 1-gil, Paju-si, Gyeonggi-do, Korea',
+      wa_label: 'Chat on WhatsApp'
+    }
+  };
+
+  let currentLang = localStorage.getItem('joymedix-lang') || 'ko';
+
+  function setLang(lang) {
+    currentLang = lang;
+    localStorage.setItem('joymedix-lang', lang);
+    document.documentElement.lang = lang;
+    document.title = I18N[lang]._title;
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const t = I18N[lang][el.dataset.i18n];
+      if (t !== undefined) el.innerHTML = t;
+    });
+    document.querySelectorAll('[data-i18n-ph]').forEach(el => {
+      const t = I18N[lang][el.dataset.i18nPh];
+      if (t !== undefined) el.placeholder = t;
+    });
+    document.getElementById('langKo').classList.toggle('active', lang === 'ko');
+    document.getElementById('langEn').classList.toggle('active', lang === 'en');
+  }
+
+  document.querySelectorAll('[data-setlang]').forEach(btn =>
+    btn.addEventListener('click', () => setLang(btn.dataset.setlang))
+  );
+  setLang(currentLang);
+
+  /* 문의 폼 → jykhl79@gmail.com 로 전송 (FormSubmit) */
+  const form = document.getElementById('inquiryForm');
+  form.addEventListener('submit', async e => {
+    e.preventDefault();
+    const btn = form.querySelector('button[type=submit]');
+    const data = Object.fromEntries(new FormData(form));
+    btn.disabled = true;
+    const prevLabel = btn.innerHTML;
+    btn.innerHTML = I18N[currentLang].btn_sending;
+    try {
+      const res = await fetch('https://formsubmit.co/ajax/jykhl79@gmail.com', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify({
+          _subject: '[JOYMEDIX] ' + data.type + ' - ' + data.name,
+          _template: 'table',
+          ...data
+        })
+      });
+      if (!res.ok) throw new Error('send failed');
+      alert(I18N[currentLang].alert_sent);
+      form.reset();
+    } catch (err) {
+      /* 전송 실패 시 메일 앱으로 대체 */
+      const body = encodeURIComponent(
+        'Name: ' + data.name + '\nCompany: ' + (data.company || '-') +
+        '\nEmail: ' + data.email + '\nRegion: ' + data.region +
+        '\nType: ' + data.type + '\n\n' + data.message
+      );
+      location.href = 'mailto:jykhl79@gmail.com?subject=' +
+        encodeURIComponent('[JOYMEDIX] ' + data.type) + '&body=' + body;
+    } finally {
+      btn.disabled = false;
+      btn.innerHTML = prevLabel;
+    }
+  });
+
+  /* 모바일 메뉴 */
+  const toggle = document.getElementById('menuToggle');
+  const links = document.getElementById('navLinks');
+  toggle.addEventListener('click', () => links.classList.toggle('open'));
+  links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => links.classList.remove('open')));
+
+  /* 스크롤 리빌 — 방향별 등장 + 그리드 순차(스태거) 등장 */
+  document.querySelector('.about-text').classList.replace('reveal', 'reveal-left');
+  document.querySelector('.values').classList.replace('reveal', 'reveal-right');
+  document.querySelectorAll('.card.reveal, .country.reveal').forEach(el => el.classList.replace('reveal', 'reveal-zoom'));
+  document.querySelectorAll('.card-grid, .biz-grid, .global-grid').forEach(grid =>
+    [...grid.children].forEach((el, i) => el.style.setProperty('--d', (i * .1) + 's'))
+  );
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('on'); io.unobserve(e.target); } });
+  }, { threshold: .12, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-zoom').forEach(el => io.observe(el));
+
+  /* 스크롤 연출 — 히어로 패럴랙스 + 네비게이션 변화 */
+  const heroContent = document.querySelector('.hero .container');
+  const heroEl = document.querySelector('.hero');
+  const navEl = document.querySelector('nav');
+  let ticking = false;
+  window.addEventListener('scroll', () => {
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(() => {
+      const y = window.scrollY;
+      navEl.classList.toggle('scrolled', y > 40);
+      const h = heroEl.offsetHeight || 1;
+      if (y < h) {
+        heroContent.style.transform = 'translateY(' + (y * .3) + 'px)';
+        heroContent.style.opacity = Math.max(0, 1 - y / (h * .75));
+        vid.style.transform = 'scale(' + (1 + y / h * .12) + ')';
+      }
+      ticking = false;
+    });
+  }, { passive: true });
+
+  /* 영상 자동재생 재시도 */
+  const vid = document.querySelector('.hero-video');
+  ['touchstart','click','scroll'].forEach(ev =>
+    document.addEventListener(ev, () => { if (vid.paused) vid.play().catch(()=>{}); }, { once:true, passive:true })
+  );
+</script>
+
+</body>
+</html>
