@@ -4,7 +4,14 @@
       "WebSearch",
       "Bash(py --version)",
       "Bash(python -m pip install --quiet openpyxl)",
-      "Bash(python -)"
+      "Bash(python -)",
+      "Bash(ffmpeg -version)",
+      "Bash(where ffmpeg *)",
+      "Read(//c/ffmpeg/bin/**)",
+      "Bash(winget --version)",
+      "Bash(cd \"/c/Users/전혜숙/AppData/Local/Temp/claude/C--Users-----Desktop-joymedix/9cbd578c-ae1b-4fdb-86d0-ba893ef16e2a/scratchpad\" *)",
+      "Bash(python -m pip install --quiet pillow)",
+      "Bash(python -c ' *)"
     ]
   }
 }
