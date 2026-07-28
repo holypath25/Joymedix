@@ -298,6 +298,47 @@
   .oem-note b { font-family:var(--font-en); letter-spacing:.15em; color: var(--accent); font-size: 14px; }
   .oem-note span { font-size: 14px; color: var(--text-dim); font-weight: 300; }
 
+  /* ── Process ──────────────────────── */
+  .timeline {
+    position: relative;
+    max-width: 780px;
+    margin: 0 auto;
+  }
+  .timeline::before {
+    content:'';
+    position:absolute; left: 27px; top: 8px; bottom: 8px;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--accent), rgba(45,212,191,.15));
+  }
+  .step {
+    position: relative;
+    display: flex; gap: 30px;
+    padding-bottom: 42px;
+  }
+  .step:last-child { padding-bottom: 0; }
+  .step-num {
+    flex: 0 0 56px;
+    width: 56px; height: 56px;
+    border-radius: 50%;
+    border: 1px solid rgba(45,212,191,.5);
+    background: var(--bg-card);
+    display:flex; align-items:center; justify-content:center;
+    font-family: var(--font-en); font-size: 15px; font-weight: 800;
+    color: var(--accent);
+    position: relative; z-index: 1;
+    transition: background .3s, color .3s, transform .3s;
+  }
+  .step:hover .step-num { background: var(--accent); color: #03201c; transform: scale(1.08); }
+  .step-body { padding-top: 6px; }
+  .step-body small {
+    font-family: var(--font-en); font-size: 10px; font-weight: 600;
+    letter-spacing: .3em; text-transform: uppercase;
+    color: var(--text-faint);
+    display:block; margin-bottom: 6px;
+  }
+  .step-body h3 { font-size: 19px; font-weight: 700; margin-bottom: 8px; }
+  .step-body p { font-size: 14px; color: var(--text-dim); font-weight: 300; max-width: 560px; }
+
   /* ── Products ─────────────────────── */
   .card-grid { display:grid; grid-template-columns:repeat(3,1fr); gap: 26px; }
   .card {
@@ -514,6 +555,7 @@
     <ul class="nav-links" id="navLinks">
       <li><a href="#about">About</a></li>
       <li><a href="#business">Business</a></li>
+      <li><a href="#process">Process</a></li>
       <li><a href="#products">Products</a></li>
       <li><a href="#global">Global</a></li>
       <li><a href="#contact">Contact</a></li>
@@ -637,6 +679,75 @@
     <div class="oem-note reveal">
       <b>+ OEM / ODM</b>
       <span data-i18n="oem_txt">바이어가 원하는 제품이 있다면, 한국 제조사 네트워크를 통한 OEM/ODM 생산도 가능합니다.</span>
+    </div>
+  </div>
+</section>
+
+<!-- ── PROCESS ── -->
+<section id="process">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="label">Our Process</span>
+      <h2>How We <em>Work</em></h2>
+      <p data-i18n="proc_lead">첫 상담부터 사후 지원까지 — JOYMEDIX와의 거래는 이렇게 진행됩니다.</p>
+    </div>
+    <div class="timeline">
+      <div class="step reveal">
+        <div class="step-num">01</div>
+        <div class="step-body">
+          <small>Consultation</small>
+          <h3 data-i18n="s1_t">상담 및 문의</h3>
+          <p data-i18n="s1_d">관심 제품, 수량, 지역, 인허가 상황 등 파트너의 요구사항을 상세히 파악합니다.</p>
+        </div>
+      </div>
+      <div class="step reveal">
+        <div class="step-num">02</div>
+        <div class="step-body">
+          <small>Quotation &amp; Contract</small>
+          <h3 data-i18n="s2_t">견적 및 계약</h3>
+          <p data-i18n="s2_d">최적의 조건으로 견적을 제안하고, 투명한 조건으로 계약을 체결합니다.</p>
+        </div>
+      </div>
+      <div class="step reveal">
+        <div class="step-num">03</div>
+        <div class="step-body">
+          <small>Sample Delivery</small>
+          <h3 data-i18n="s3_t">샘플 발송</h3>
+          <p data-i18n="s3_d">본 발주 전 샘플을 발송하여 품질과 시장 적합성을 직접 확인하실 수 있습니다.</p>
+        </div>
+      </div>
+      <div class="step reveal">
+        <div class="step-num">04</div>
+        <div class="step-body">
+          <small>Regulatory &amp; Documents</small>
+          <h3 data-i18n="s4_t">인허가 · 수출 서류 지원</h3>
+          <p data-i18n="s4_d">현지 인허가 대응과 수출 서류(CFS, COA 등) 준비를 지원합니다. OEM/ODM 진행 시 제조사 협의도 함께 진행합니다.</p>
+        </div>
+      </div>
+      <div class="step reveal">
+        <div class="step-num">05</div>
+        <div class="step-body">
+          <small>Order &amp; Production</small>
+          <h3 data-i18n="s5_t">발주 및 생산</h3>
+          <p data-i18n="s5_d">정식 발주 후 제조사 네트워크를 통해 생산·수급을 진행하고 일정을 투명하게 공유합니다.</p>
+        </div>
+      </div>
+      <div class="step reveal">
+        <div class="step-num">06</div>
+        <div class="step-body">
+          <small>Q/C &amp; Shipment</small>
+          <h3 data-i18n="s6_t">검수 및 선적</h3>
+          <p data-i18n="s6_d">출고 전 전수 검수를 거쳐 안전하게 포장하고, 최적의 물류 경로로 선적합니다.</p>
+        </div>
+      </div>
+      <div class="step reveal">
+        <div class="step-num">07</div>
+        <div class="step-body">
+          <small>After-sales Support</small>
+          <h3 data-i18n="s7_t">사후 지원</h3>
+          <p data-i18n="s7_d">납품 후에도 재고 관리, 재주문, 클레임 대응까지 — 신뢰·정직·상생의 파트너십을 이어갑니다.</p>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -826,6 +937,7 @@
         <ul>
           <li><a href="#about">About Us</a></li>
           <li><a href="#business">Business</a></li>
+          <li><a href="#process">Process</a></li>
           <li><a href="#products">Products</a></li>
           <li><a href="#global">Global Network</a></li>
           <li><a href="#contact">Contact</a></li>
@@ -884,6 +996,14 @@
       biz3_t: 'K-뷰티션<br>해외 클리닉 파견',
       biz3_d: '한국의 우수한 뷰티션(에스테티션)을 해외 클리닉에 파견하여, K-Beauty의 섬세한 케어 노하우를 현지에서 그대로 구현합니다.',
       oem_txt: '바이어가 원하는 제품이 있다면, 한국 제조사 네트워크를 통한 OEM/ODM 생산도 가능합니다.',
+      proc_lead: '첫 상담부터 사후 지원까지 — JOYMEDIX와의 거래는 이렇게 진행됩니다.',
+      s1_t: '상담 및 문의', s1_d: '관심 제품, 수량, 지역, 인허가 상황 등 파트너의 요구사항을 상세히 파악합니다.',
+      s2_t: '견적 및 계약', s2_d: '최적의 조건으로 견적을 제안하고, 투명한 조건으로 계약을 체결합니다.',
+      s3_t: '샘플 발송', s3_d: '본 발주 전 샘플을 발송하여 품질과 시장 적합성을 직접 확인하실 수 있습니다.',
+      s4_t: '인허가 · 수출 서류 지원', s4_d: '현지 인허가 대응과 수출 서류(CFS, COA 등) 준비를 지원합니다. OEM/ODM 진행 시 제조사 협의도 함께 진행합니다.',
+      s5_t: '발주 및 생산', s5_d: '정식 발주 후 제조사 네트워크를 통해 생산·수급을 진행하고 일정을 투명하게 공유합니다.',
+      s6_t: '검수 및 선적', s6_d: '출고 전 전수 검수를 거쳐 안전하게 포장하고, 최적의 물류 경로로 선적합니다.',
+      s7_t: '사후 지원', s7_d: '납품 후에도 재고 관리, 재주문, 클레임 대응까지 — 신뢰·정직·상생의 파트너십을 이어갑니다.',
       prod_lead: 'MD크림부터 스킨부스터, 필러, IV 솔루션까지 — 클리닉 운영에 필요한 모든 카테고리를 취급합니다.',
       p1_t: 'MD 크림 · 의료기기 등급', p1_d: '피부 장벽 보호용 의료기기 등급 크림·로션 라인업. 아토피, 민감성, 시술 후 피부까지.',
       p2_t: '더마 코스메틱', p2_d: '클리닉 전용 스킨케어부터 홈케어까지, 검증된 K-더마 브랜드의 정품 라인업.',
@@ -939,6 +1059,14 @@
       biz3_t: 'K-Beautician<br>Overseas Dispatch',
       biz3_d: 'We dispatch Korea\'s top beauticians (estheticians) to overseas clinics, bringing the refined care techniques of K-Beauty directly to your location.',
       oem_txt: 'Looking for a specific product? OEM/ODM production is also available through our network of Korean manufacturers.',
+      proc_lead: 'From the first consultation to after-sales support — here is how working with JOYMEDIX goes.',
+      s1_t: 'Consultation', s1_d: 'We listen closely to your needs — products of interest, volume, region, and regulatory status.',
+      s2_t: 'Quotation & Contract', s2_d: 'We propose competitive terms and sign a contract built on full transparency.',
+      s3_t: 'Sample Delivery', s3_d: 'Samples are shipped before the main order so you can verify quality and market fit firsthand.',
+      s4_t: 'Regulatory & Documents', s4_d: 'We support local regulatory compliance and export documentation (CFS, COA, etc.). For OEM/ODM projects, we coordinate with manufacturers as well.',
+      s5_t: 'Order & Production', s5_d: 'After the official order, we manage production and sourcing through our manufacturer network with transparent schedules.',
+      s6_t: 'Q/C & Shipment', s6_d: 'Every order passes full inspection before packing, then ships via the optimal logistics route.',
+      s7_t: 'After-sales Support', s7_d: 'Even after delivery — inventory management, reorders, and claims handling. A partnership of trust, honesty, and win-win.',
       prod_lead: 'From MD creams to skin boosters, fillers, and IV solutions — we carry every category a clinic needs.',
       p1_t: 'MD Cream · Medical Grade', p1_d: 'Medical-device-grade creams and lotions for skin barrier protection — for atopic, sensitive, and post-procedure skin.',
       p2_t: 'Dermo Cosmetics', p2_d: 'Authentic lineups from proven K-derma brands, from clinic-exclusive skincare to home care.',
@@ -1046,7 +1174,7 @@
   document.querySelector('.about-text').classList.replace('reveal', 'reveal-left');
   document.querySelector('.values').classList.replace('reveal', 'reveal-right');
   document.querySelectorAll('.card.reveal, .country.reveal').forEach(el => el.classList.replace('reveal', 'reveal-zoom'));
-  document.querySelectorAll('.card-grid, .biz-grid, .global-grid').forEach(grid =>
+  document.querySelectorAll('.card-grid, .biz-grid, .global-grid, .timeline').forEach(grid =>
     [...grid.children].forEach((el, i) => el.style.setProperty('--d', (i * .1) + 's'))
   );
   const io = new IntersectionObserver(entries => {
