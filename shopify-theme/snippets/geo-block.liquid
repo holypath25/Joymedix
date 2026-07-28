@@ -1,0 +1,16 @@
+{% comment %}
+  한국(KR) IP 접속 차단 — google.com 으로 리다이렉트
+  JS geo API로 실시간 IP 확인 → VPN 전환 시 즉시 허용
+{% endcomment %}
+<script>
+  (function() {
+    fetch('https://get.geojs.io/v1/ip/country.json', { cache: 'no-store' })
+      .then(function(r) { return r.json(); })
+      .then(function(d) {
+        if ((d.country || '') === 'KR') {
+          window.location.replace('https://www.google.com');
+        }
+      })
+      .catch(function() {});
+  })();
+</script>
