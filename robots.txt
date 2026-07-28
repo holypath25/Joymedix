@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://joymedix.co.kr/sitemap.xml
