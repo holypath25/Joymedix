@@ -3,6 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-BP1NNDZZY9"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-BP1NNDZZY9');
+</script>
+
 <title>프로세스 | 조이메딕스 JOYMEDIX</title>
 <meta name="description" content="JOYMEDIX와의 거래 프로세스 — 상담, 견적·계약, 샘플, 인허가 지원, 생산, 검수·선적, 사후 지원까지 7단계로 투명하게 진행됩니다.">
 <meta name="robots" content="index, follow">
@@ -91,6 +101,12 @@
     font-size: 12px; font-weight:600; letter-spacing:.2em; text-transform:uppercase;
     color: var(--text-dim);
     transition: color .25s;
+    white-space: nowrap;
+  }
+  @media (max-width: 1150px) {
+    .nav-links { gap: 20px; }
+    .nav-links a { letter-spacing: .12em; }
+    .nav-cta { display: none; }   /* Contact 메뉴와 중복 — 좁은 폭에서 숨김 */
   }
   .nav-links a:hover, .nav-links a.active { color: var(--text); }
   .nav-links a.active { color: var(--accent); }
@@ -355,7 +371,7 @@
     <ul class="nav-links" id="navLinks">
       <li><a href="index.html#about">About</a></li>
       <li><a href="index.html#business">Business</a></li>
-      <li><a href="clinic.html">Clinic</a></li>
+      <li><a href="clinic.html">Clinic Setup</a></li>
       <li><a href="process.html" class="active">Process</a></li>
       <li><a href="index.html#products">Products</a></li>
       <li><a href="index.html#global">Global</a></li>
@@ -484,7 +500,7 @@
         <ul>
           <li><a href="index.html#about">About Us</a></li>
           <li><a href="index.html#business">Business</a></li>
-          <li><a href="clinic.html">Clinic Consulting</a></li>
+          <li><a href="clinic.html">Clinic Setup Consulting</a></li>
           <li><a href="process.html">Process</a></li>
           <li><a href="index.html#products">Products</a></li>
           <li><a href="index.html#global">Global Network</a></li>

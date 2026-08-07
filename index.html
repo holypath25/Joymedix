@@ -3,6 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-BP1NNDZZY9"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-BP1NNDZZY9');
+</script>
+
 <title>조이메딕스 JOYMEDIX - K-Medical &amp; Beauty 전문기업 | 의료기기·뷰티 유통, 클리닉 개원 컨설팅</title>
 <meta name="description" content="조이메딕스(JOYMEDIX)는 조이소아과를 모체로 탄생한 K-Medical & Beauty 전문 기업입니다. 메디컬·의료기기·뷰티 제품 유통 및 수출, 비만·성장·피부 클리닉 현지 개원 컨설팅, K-뷰티션 해외 파견, OEM/ODM을 제공합니다. 캐나다·미국·몽골·일본·호주 파트너와 함께합니다.">
 <meta name="keywords" content="조이메딕스, JOYMEDIX, 조이소아과, K-Medical, K-Beauty, 의료기기 수출, 뷰티 제품 유통, 클리닉 개원 컨설팅, 뷰티션 파견, 에스테티션 파견, OEM ODM, 스킨부스터, 필러 수출, MD크림">
@@ -133,6 +143,12 @@
     font-size: 12px; font-weight:600; letter-spacing:.2em; text-transform:uppercase;
     color: var(--text-dim);
     transition: color .25s;
+    white-space: nowrap;
+  }
+  @media (max-width: 1150px) {
+    .nav-links { gap: 20px; }
+    .nav-links a { letter-spacing: .12em; }
+    .nav-cta { display: none; }   /* Contact 메뉴와 중복 — 좁은 폭에서 숨김 */
   }
   .nav-links a:hover { color: var(--text); }
   .nav-right { display:flex; align-items:center; gap: 18px; }
@@ -515,7 +531,7 @@
     <ul class="nav-links" id="navLinks">
       <li><a href="#about">About</a></li>
       <li><a href="#business">Business</a></li>
-      <li><a href="clinic.html">Clinic</a></li>
+      <li><a href="clinic.html">Clinic Setup</a></li>
       <li><a href="process.html">Process</a></li>
       <li><a href="#products">Products</a></li>
       <li><a href="#global">Global</a></li>
@@ -832,7 +848,7 @@
         <ul>
           <li><a href="#about">About Us</a></li>
           <li><a href="#business">Business</a></li>
-          <li><a href="clinic.html">Clinic Consulting</a></li>
+          <li><a href="clinic.html">Clinic Setup Consulting</a></li>
           <li><a href="process.html">Process</a></li>
           <li><a href="#products">Products</a></li>
           <li><a href="#global">Global Network</a></li>
@@ -1035,7 +1051,8 @@
     const prevLabel = btn.innerHTML;
     btn.innerHTML = I18N[currentLang].btn_sending;
     try {
-      const res = await fetch('https://formsubmit.co/ajax/jykhl79@gmail.com', {
+      // 토큰 사용 — 이메일 주소가 소스에 노출되지 않아 스팸 수집을 막음 (jykhl79@gmail.com 연결)
+      const res = await fetch('https://formsubmit.co/ajax/055f2e92ac199a0e355a8ccdd3033645', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
         body: JSON.stringify({
