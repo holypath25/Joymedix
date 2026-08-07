@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>클리닉 개원 컨설팅 | 조이메딕스 JOYMEDIX</title>
+<meta name="description" content="조이소아청소년과의 검증된 성장·성조숙증·소아비만 클리닉 모델을 해외 현지에 그대로 이식합니다. 진료 프로토콜, 장비, 제품, 인력 교육까지 원스톱 개원 컨설팅.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://joymedix.co.kr/clinic.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="JOYMEDIX">
+<meta property="og:url" content="https://joymedix.co.kr/clinic.html">
+<meta property="og:title" content="클리닉 개원 컨설팅 | 조이메딕스 JOYMEDIX">
+<meta property="og:description" content="조이소아청소년과의 검증된 성장·성조숙증·소아비만 클리닉 모델을 해외 현지에 그대로 이식합니다.">
+<meta property="og:image" content="https://joymedix.co.kr/img/og-image.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #050505;
+    --bg-soft: #0d0d0d;
+    --bg-card: #111111;
+    --text: #ffffff;
+    --text-dim: rgba(255,255,255,.55);
+    --text-faint: rgba(255,255,255,.35);
+    --line: rgba(255,255,255,.12);
+    --accent: #2dd4bf;
+    --accent-soft: rgba(45,212,191,.12);
+    --font-en: 'Inter', sans-serif;
+    --font-kr: 'Noto Sans KR', 'Inter', sans-serif;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html { scroll-behavior:smooth; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font-kr);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+  a { color:inherit; text-decoration:none; }
+  .container { width:min(1200px, 92%); margin:0 auto; }
+  .label {
+    font-family: var(--font-en);
+    font-size: 11px; letter-spacing: .35em; text-transform: uppercase;
+    color: var(--accent); display:block; margin-bottom: 18px;
+  }
+  .btn {
+    display:inline-block;
+    font-family: var(--font-en);
+    font-size: 13px; font-weight: 600; letter-spacing: .25em; text-transform: uppercase;
+    padding: 16px 34px;
+    border: 1px solid rgba(255,255,255,.35);
+    background: transparent; color: var(--text);
+    cursor: pointer; transition: all .3s ease;
+  }
+  .btn:hover { background: var(--text); color: var(--bg); border-color: var(--text); }
+  .btn.solid { background: var(--accent); border-color: var(--accent); color:#03201c; }
+  .btn.solid:hover { background:#5eead4; border-color:#5eead4; }
+
+  /* ── Nav ─────────────────────────── */
+  nav {
+    position: fixed; top:0; left:0; right:0; z-index:100;
+    background: rgba(5,5,5,.8);
+    backdrop-filter: blur(14px);
+    border-bottom: 1px solid var(--line);
+    transition: background .4s ease, box-shadow .4s ease;
+  }
+  nav.scrolled { background: rgba(5,5,5,.95); box-shadow: 0 4px 30px rgba(0,0,0,.5); }
+  .nav-inner {
+    width:min(1300px, 94%); margin:0 auto;
+    display:flex; align-items:center; justify-content:space-between;
+    height: 72px; gap: 18px;
+  }
+  .logo { font-family: var(--font-en); font-weight: 900; font-size: 20px; letter-spacing: .12em; }
+  .logo span { color: var(--accent); }
+  .nav-links { display:flex; gap: 28px; list-style:none; }
+  .nav-links a {
+    font-family: var(--font-en);
+    font-size: 12px; font-weight:600; letter-spacing:.2em; text-transform:uppercase;
+    color: var(--text-dim); transition: color .25s;
+  }
+  .nav-links a:hover { color: var(--text); }
+  .nav-links a.active { color: var(--accent); }
+  .nav-right { display:flex; align-items:center; gap: 18px; }
+  .lang-switch {
+    display:flex; align-items:center; gap: 8px;
+    font-family: var(--font-en); font-size: 12px; font-weight:700; letter-spacing:.1em;
+  }
+  .lang-switch button {
+    background:none; border:none; cursor:pointer;
+    font: inherit; color: var(--text-faint); padding: 4px 2px; transition: color .25s;
+  }
+  .lang-switch button.active { color: var(--accent); }
+  .lang-switch button:hover { color: var(--text); }
+  .lang-switch i { font-style:normal; color: var(--text-faint); font-weight:300; }
+  .nav-cta {
+    font-family: var(--font-en); font-size:12px; font-weight:600; letter-spacing:.2em;
+    border:1px solid var(--line); padding:10px 20px; transition: all .3s;
+  }
+  .nav-cta:hover { background:var(--accent); border-color:var(--accent); color:#03201c; }
+  .menu-toggle { display:none; background:none; border:none; color:var(--text); font-size:24px; cursor:pointer; }
+
+  /* ── Page hero ────────────────────── */
+  .page-hero {
+    padding: 190px 0 90px;
+    position: relative;
+    background:
+      radial-gradient(ellipse 60% 50% at 78% 18%, rgba(45,212,191,.10), transparent 60%),
+      var(--bg);
+    overflow: hidden;
+  }
+  .page-hero::after {
+    content:'';
+    position:absolute; inset:0;
+    background-image: linear-gradient(var(--line) 1px, transparent 1px), linear-gradient(90deg, var(--line) 1px, transparent 1px);
+    background-size: 80px 80px;
+    opacity:.16;
+    mask-image: radial-gradient(ellipse 70% 70% at 50% 30%, black, transparent 80%);
+    -webkit-mask-image: radial-gradient(ellipse 70% 70% at 50% 30%, black, transparent 80%);
+    pointer-events:none;
+  }
+  .page-hero .container { position:relative; z-index:1; }
+  .page-hero h1 {
+    font-family: var(--font-en); font-weight: 800;
+    font-size: clamp(36px, 5.6vw, 68px);
+    text-transform: uppercase; letter-spacing: -.01em; line-height: 1.05;
+  }
+  .page-hero h1 em { font-style:normal; color:transparent; -webkit-text-stroke:1.2px rgba(255,255,255,.5); }
+  .page-hero p { margin-top: 22px; max-width: 620px; color: var(--text-dim); font-weight:300; font-size:15px; }
+
+  section { padding: 110px 0; }
+  .sec-head { margin-bottom: 58px; }
+  .sec-head h2 {
+    font-family: var(--font-en); font-weight: 800;
+    font-size: clamp(30px, 4.4vw, 52px);
+    text-transform: uppercase; line-height: 1.05;
+  }
+  .sec-head h2 em { font-style:normal; color:transparent; -webkit-text-stroke:1.2px rgba(255,255,255,.5); }
+  .sec-head p { margin-top: 18px; max-width: 600px; color: var(--text-dim); font-weight:300; font-size:15px; }
+
+  /* ── Origin (모체 병원) ───────────── */
+  .origin { background: var(--bg-soft); border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
+  .origin-grid { display:grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items:center; }
+  .origin-text h3 { font-size: 23px; font-weight:700; line-height:1.45; margin-bottom: 18px; }
+  .origin-text h3 span { color: var(--accent); }
+  .origin-text p { color: var(--text-dim); font-weight:300; font-size:15px; margin-bottom: 14px; }
+  .origin-facts { display:grid; gap: 16px; }
+  .fact {
+    border:1px solid var(--line); background: var(--bg-card);
+    padding: 22px 24px; display:flex; gap: 18px; align-items:flex-start;
+    transition: border-color .3s;
+  }
+  .fact:hover { border-color: rgba(45,212,191,.5); }
+  .fact svg { width: 26px; height: 26px; flex:0 0 26px; margin-top: 3px; }
+  .fact h4 { font-size: 16px; font-weight: 700; margin-bottom: 5px; }
+  .fact p { font-size: 13.5px; color: var(--text-dim); font-weight: 300; }
+
+  /* ── Programs (3 클리닉) ──────────── */
+  .prog-grid { display:grid; grid-template-columns: repeat(3, 1fr); gap: 26px; }
+  .prog {
+    border: 1px solid var(--line); background: var(--bg-card);
+    display:flex; flex-direction:column;
+    transition: transform .4s cubic-bezier(.16,1,.3,1), border-color .3s, box-shadow .4s;
+  }
+  .prog:hover {
+    transform: translateY(-8px);
+    border-color: rgba(45,212,191,.5);
+    box-shadow: 0 18px 44px rgba(0,0,0,.4);
+  }
+  .prog-top {
+    padding: 34px 28px 26px;
+    border-bottom: 1px solid var(--line);
+    position: relative; overflow: hidden;
+  }
+  .prog:nth-child(1) .prog-top { background: radial-gradient(circle at 80% 10%, rgba(45,212,191,.14), transparent 60%); }
+  .prog:nth-child(2) .prog-top { background: radial-gradient(circle at 80% 10%, rgba(244,164,206,.13), transparent 60%); }
+  .prog:nth-child(3) .prog-top { background: radial-gradient(circle at 80% 10%, rgba(251,191,36,.12), transparent 60%); }
+  .prog-tag {
+    font-family: var(--font-en); font-size: 10px; font-weight: 600;
+    letter-spacing: .3em; text-transform: uppercase; color: var(--accent);
+    display:block; margin-bottom: 12px;
+  }
+  .prog-top h3 { font-size: 21px; font-weight: 700; margin-bottom: 10px; }
+  .prog-top p { font-size: 13.5px; color: var(--text-dim); font-weight: 300; }
+  .prog-body { padding: 26px 28px 30px; flex:1; }
+  .prog-body h5 {
+    font-family: var(--font-en); font-size: 10px; font-weight: 600;
+    letter-spacing: .25em; text-transform: uppercase; color: var(--text-faint);
+    margin-bottom: 16px;
+  }
+  .prog-steps { list-style:none; display:grid; gap: 14px; }
+  .prog-steps li { display:flex; gap: 13px; align-items:flex-start; }
+  .prog-steps b {
+    font-family: var(--font-en); font-size: 11px; font-weight: 800;
+    color: var(--accent); flex:0 0 22px; padding-top: 2px;
+  }
+  .prog-steps strong { display:block; font-size: 14px; font-weight: 600; margin-bottom: 3px; }
+  .prog-steps span { font-size: 12.5px; color: var(--text-dim); font-weight: 300; line-height:1.55; }
+
+  /* ── Package (컨설팅 제공 범위) ───── */
+  .package { background: var(--bg-soft); border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
+  .pkg-grid { display:grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+  .pkg {
+    border:1px solid var(--line); background: var(--bg-card);
+    padding: 34px 30px;
+    transition: border-color .3s, transform .35s ease;
+  }
+  .pkg:hover { border-color: rgba(45,212,191,.5); transform: translateY(-5px); }
+  .pkg-num {
+    font-family: var(--font-en); font-size: 12px; font-weight: 700;
+    letter-spacing: .2em; color: var(--accent); display:block; margin-bottom: 14px;
+  }
+  .pkg h3 { font-size: 19px; font-weight: 700; margin-bottom: 10px; }
+  .pkg p { font-size: 14px; color: var(--text-dim); font-weight: 300; }
+
+  /* ── Highlight (1일 1환아) ────────── */
+  .highlight {
+    border: 1px dashed rgba(45,212,191,.45);
+    background: var(--accent-soft);
+    padding: 40px 44px;
+    display:grid; grid-template-columns: auto 1fr; gap: 30px; align-items:center;
+  }
+  .highlight-num {
+    font-family: var(--font-en); font-weight: 900;
+    font-size: clamp(44px, 7vw, 76px);
+    color: var(--accent); line-height: 1;
+  }
+  .highlight h3 { font-size: 21px; font-weight: 700; margin-bottom: 10px; }
+  .highlight p { font-size: 14.5px; color: var(--text-dim); font-weight: 300; }
+
+  /* ── CTA ──────────────────────────── */
+  .cta-sec { padding: 100px 0; text-align: center; }
+  .cta-sec h2 {
+    font-family: var(--font-en); font-weight: 800;
+    font-size: clamp(28px, 4vw, 44px); text-transform: uppercase; margin-bottom: 14px;
+  }
+  .cta-sec p { color: var(--text-dim); font-weight: 300; font-size: 15px; margin-bottom: 34px; }
+
+  /* ── Footer ───────────────────────── */
+  footer { border-top:1px solid var(--line); padding: 70px 0 34px; background: var(--bg); }
+  .foot-grid { display:grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 48px; margin-bottom: 56px; }
+  .foot-brand p { margin-top: 18px; font-size:13.5px; color: var(--text-dim); font-weight:300; max-width: 340px; }
+  .foot-social { display:flex; gap: 18px; margin-top: 24px; }
+  .foot-social a { font-family:var(--font-en); font-size:11px; font-weight:600; letter-spacing:.25em; text-transform:uppercase; color:var(--text-dim); transition:color .25s; }
+  .foot-social a:hover { color: var(--accent); }
+  .foot-col h4 { font-family:var(--font-en); font-size:11px; letter-spacing:.3em; text-transform:uppercase; color:var(--text-faint); margin-bottom: 20px; }
+  .foot-col ul { list-style:none; display:grid; gap: 12px; }
+  .foot-col a, .foot-col li { font-size: 14px; color: var(--text-dim); font-weight:300; }
+  .foot-col a:hover { color: var(--text); }
+  .foot-bottom {
+    border-top:1px solid var(--line); padding-top: 28px;
+    display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px;
+    font-family:var(--font-en); font-size:11px; letter-spacing:.15em; text-transform:uppercase; color:var(--text-faint);
+  }
+
+  /* ── Floating WhatsApp ────────────── */
+  .float-wa {
+    position: fixed; right: 26px; bottom: 26px; z-index: 200;
+    display:flex; align-items:center; gap: 12px; text-decoration:none;
+  }
+  .float-wa .wa-label {
+    background: var(--bg-card); border: 1px solid var(--line); color: var(--text);
+    font-size: 13px; font-weight: 500; padding: 10px 16px; border-radius: 999px;
+    white-space: nowrap; opacity: 0; transform: translateX(8px);
+    transition: opacity .3s ease, transform .3s ease; pointer-events: none;
+    box-shadow: 0 8px 30px rgba(0,0,0,.45);
+  }
+  .float-wa:hover .wa-label { opacity: 1; transform: translateX(0); }
+  .float-wa .wa-btn {
+    width: 60px; height: 60px; border-radius: 50%; background: #25D366;
+    display:flex; align-items:center; justify-content:center;
+    box-shadow: 0 10px 30px rgba(37,211,102,.35), 0 4px 14px rgba(0,0,0,.4);
+    transition: transform .3s ease; position: relative;
+  }
+  .float-wa .wa-btn::after {
+    content:''; position:absolute; inset:0; border-radius:50%;
+    border: 2px solid rgba(37,211,102,.6);
+    animation: wa-pulse 2.4s ease-out infinite;
+  }
+  @keyframes wa-pulse {
+    0% { transform: scale(1); opacity: .8; }
+    70%, 100% { transform: scale(1.55); opacity: 0; }
+  }
+  .float-wa:hover .wa-btn { transform: scale(1.08); }
+  .float-wa .wa-btn svg { width: 32px; height: 32px; fill: #fff; }
+
+  /* ── Reveal animation ─────────────── */
+  .reveal { opacity:0; transform: translateY(34px); transition: opacity .9s cubic-bezier(.16,1,.3,1), transform .9s cubic-bezier(.16,1,.3,1); transition-delay: var(--d, 0s); }
+  .reveal.on { opacity:1; transform:none; }
+
+  /* ── Responsive ───────────────────── */
+  @media (max-width: 1000px) {
+    .prog-grid { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 900px) {
+    .nav-links, .nav-cta { display:none; }
+    .menu-toggle { display:block; }
+    .nav-links.open {
+      display:flex; flex-direction:column; gap:0;
+      position:absolute; top:72px; left:0; right:0;
+      background: rgba(5,5,5,.97); border-bottom:1px solid var(--line);
+    }
+    .nav-links.open li { border-top:1px solid var(--line); }
+    .nav-links.open a { display:block; padding: 18px 6%; }
+    .origin-grid, .pkg-grid { grid-template-columns: 1fr; gap: 40px; }
+    .pkg-grid { gap: 20px; }
+    .highlight { grid-template-columns: 1fr; gap: 16px; padding: 32px 28px; text-align:center; }
+    .foot-grid { grid-template-columns: 1fr; gap: 36px; }
+    section { padding: 80px 0; }
+  }
+  @media (max-width: 620px) {
+    .float-wa { right: 18px; bottom: 18px; }
+    .float-wa .wa-btn { width: 54px; height: 54px; }
+    .float-wa .wa-label { display:none; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .reveal { opacity:1 !important; transform:none !important; transition:none !important; }
+    .float-wa .wa-btn::after { animation: none; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="logo">JOY<span>MEDIX</span></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="index.html#business">Business</a></li>
+      <li><a href="clinic.html" class="active">Clinic</a></li>
+      <li><a href="process.html">Process</a></li>
+      <li><a href="index.html#products">Products</a></li>
+      <li><a href="index.html#global">Global</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+    <div class="nav-right">
+      <div class="lang-switch" role="group" aria-label="Language">
+        <button type="button" data-setlang="ko" id="langKo" class="active">KO</button>
+        <i>/</i>
+        <button type="button" data-setlang="en" id="langEn">EN</button>
+      </div>
+      <a href="index.html#contact" class="nav-cta">GET IN TOUCH</a>
+      <button class="menu-toggle" id="menuToggle" aria-label="메뉴 열기">☰</button>
+    </div>
+  </div>
+</nav>
+
+<!-- ── PAGE HERO ── -->
+<header class="page-hero">
+  <div class="container">
+    <span class="label">Clinic Setup Consulting</span>
+    <h1>Proven Clinic,<br><em>Replicated Abroad</em></h1>
+    <p data-i18n="hero_p">한국에서 검증된 성장·성조숙증·소아비만 클리닉 모델을 해외 현지에 그대로 이식합니다. 진료 프로토콜부터 장비, 제품, 인력 교육까지 — 개원의 처음부터 끝까지 함께합니다.</p>
+  </div>
+</header>
+
+<!-- ── ORIGIN ── -->
+<section class="origin">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="label">The Origin</span>
+      <h2>Built on a <em>Real Clinic</em></h2>
+    </div>
+    <div class="origin-grid">
+      <div class="origin-text reveal">
+        <h3 data-i18n="origin_h3">이론이 아닌,<br><span>매일 운영되는 진료 현장에서 나온 모델</span></h3>
+        <p data-i18n="origin_p1">JOYMEDIX가 제안하는 클리닉 모델은 컨설팅사가 만든 자료가 아닙니다. 모체인 조이소아청소년과의원이 실제로 운영하며 축적한 진료 프로토콜, 검사 체계, 환자 관리 시스템을 그대로 옮긴 것입니다.</p>
+        <p data-i18n="origin_p2">성장(키), 성조숙증, 소아비만 — 이 세 영역은 서로 맞물려 있습니다. 조이소아과는 이를 분리하지 않고 '성장 밸런스'라는 하나의 축으로 통합 관리하며, 이 통합 모델이 해외 파트너에게 전달하는 핵심 자산입니다.</p>
+      </div>
+      <div class="origin-facts reveal">
+        <div class="fact">
+          <svg viewBox="0 0 32 32" fill="none" stroke="#2dd4bf" stroke-width="1.8"><circle cx="16" cy="16" r="13"/><path d="M16 9v7l5 3" stroke-linecap="round"/></svg>
+          <div>
+            <h4 data-i18n="f1_t">검증된 진료 프로토콜</h4>
+            <p data-i18n="f1_d">실제 환자 데이터로 다듬어진 검사·판독·치료 흐름을 그대로 제공합니다.</p>
+          </div>
+        </div>
+        <div class="fact">
+          <svg viewBox="0 0 32 32" fill="none" stroke="#2dd4bf" stroke-width="1.8"><rect x="5" y="8" width="22" height="17" rx="2"/><path d="M11 8V5h10v3M16 14v6M13 17h6" stroke-linecap="round"/></svg>
+          <div>
+            <h4 data-i18n="f2_t">장비 · 제품 원스톱 공급</h4>
+            <p data-i18n="f2_d">X-ray, 체성분 분석기부터 성장호르몬·검사 키트까지 개원에 필요한 모든 것을 함께 공급합니다.</p>
+          </div>
+        </div>
+        <div class="fact">
+          <svg viewBox="0 0 32 32" fill="none" stroke="#2dd4bf" stroke-width="1.8"><circle cx="16" cy="11" r="5"/><path d="M7 26c0-5 4-9 9-9s9 4 9 9" stroke-linecap="round"/></svg>
+          <div>
+            <h4 data-i18n="f3_t">전담 상담 시스템 이식</h4>
+            <p data-i18n="f3_d">1:1 전담 상담 간호사 운영 노하우 — 재방문율을 좌우하는 핵심 시스템을 교육합니다.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── PROGRAMS ── -->
+<section id="programs">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="label">Three Clinic Programs</span>
+      <h2>What You Can <em>Open</em></h2>
+      <p data-i18n="prog_lead">조이소아과가 운영 중인 세 가지 성장 클리닉 프로그램. 각각 독립 운영도, 통합 운영도 가능합니다.</p>
+    </div>
+    <div class="prog-grid">
+
+      <div class="prog reveal">
+        <div class="prog-top">
+          <span class="prog-tag">Growth Clinic</span>
+          <h3 data-i18n="p1_t">성장 클리닉 <small style="font-weight:400; color:var(--text-faint);">(작은아이)</small></h3>
+          <p data-i18n="p1_d">또래보다 키가 작은 아이의 성장 가능성을 정밀 분석하고, 성장판이 닫히기 전 골든타임을 관리합니다.</p>
+        </div>
+        <div class="prog-body">
+          <h5>Examination &amp; Management</h5>
+          <ul class="prog-steps">
+            <li><b>01</b><div><strong data-i18n="p1s1_t">성장판 X-ray 검사</strong><span data-i18n="p1s1_d">손바닥 X-ray로 뼈나이(골연령)를 촬영해 뼈 성숙도와 성장 속도를 분석</span></div></li>
+            <li><b>02</b><div><strong data-i18n="p1s2_t">혈액 검사</strong><span data-i18n="p1s2_d">전반적 건강 상태와 성장 지연 원인 평가, 필요 시 상급병원 연계</span></div></li>
+            <li><b>03</b><div><strong data-i18n="p1s3_t">예상 성인키 분석</strong><span data-i18n="p1s3_d">성장 곡선 기반으로 예상 성인 키를 예측하고 관리 시점 제시</span></div></li>
+            <li><b>04</b><div><strong data-i18n="p1s4_t">성장플랜 관리</strong><span data-i18n="p1s4_d">전담 상담 간호사가 검사·주사 일정과 성장 변화를 체계적으로 관리</span></div></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="prog reveal">
+        <div class="prog-top">
+          <span class="prog-tag">Precocious Puberty</span>
+          <h3 data-i18n="p2_t">성조숙증 클리닉 <small style="font-weight:400; color:var(--text-faint);">(빠른아이)</small></h3>
+          <p data-i18n="p2_d">여아 만 8세·남아 만 9세 이전 2차성징이 나타나는 경우, 조기 진단으로 성장판 조기 폐쇄를 막습니다.</p>
+        </div>
+        <div class="prog-body">
+          <h5>Examination &amp; Management</h5>
+          <ul class="prog-steps">
+            <li><b>01</b><div><strong data-i18n="p2s1_t">문진 및 증상 확인</strong><span data-i18n="p2s1_d">유방 멍울, 성장 속도, 신체 변화, 가족력을 종합 평가</span></div></li>
+            <li><b>02</b><div><strong data-i18n="p2s2_t">뼈나이 X-ray 검사</strong><span data-i18n="p2s2_d">골연령 촬영으로 실제 나이 대비 뼈 성숙 정도를 분석</span></div></li>
+            <li><b>03</b><div><strong data-i18n="p2s3_t">유방 촉진 검사</strong><span data-i18n="p2s3_d">유선 발달 상태를 단계별로 진단</span></div></li>
+            <li><b>04</b><div><strong data-i18n="p2s4_t">GnRH 유발검사</strong><span data-i18n="p2s4_d">확진 검사 — 성선자극호르몬 투여 후 뇌하수체 반응을 정밀 측정</span></div></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="prog reveal">
+        <div class="prog-top">
+          <span class="prog-tag">Pediatric Obesity</span>
+          <h3 data-i18n="p3_t">소아비만 클리닉 <small style="font-weight:400; color:var(--text-faint);">(큰아이)</small></h3>
+          <p data-i18n="p3_d">단순 체중 감량이 아닌, 호르몬 불균형과 성장 억제까지 함께 보는 통합 성장 관리 시스템입니다.</p>
+        </div>
+        <div class="prog-body">
+          <h5>Examination &amp; Management</h5>
+          <ul class="prog-steps">
+            <li><b>01</b><div><strong data-i18n="p3s1_t">비만 원인 검사</strong><span data-i18n="p3s1_d">성장호르몬·갑상선·인슐린 등 주요 호르몬 분석으로 내분비 이상 확인</span></div></li>
+            <li><b>02</b><div><strong data-i18n="p3s2_t">성장호르몬 검사</strong><span data-i18n="p3s2_d">호르몬 유발검사로 성장 억제 원인을 정확히 진단</span></div></li>
+            <li><b>03</b><div><strong data-i18n="p3s3_t">체성분 분석</strong><span data-i18n="p3s3_d">근육·지방·수분 밸런스를 객관적으로 파악해 맞춤 영양 지도에 반영</span></div></li>
+            <li><b>04</b><div><strong data-i18n="p3s4_t">생활습관 코칭</strong><span data-i18n="p3s4_d">전담 상담 간호사가 식습관·운동·수면을 통합 피드백으로 관리</span></div></li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── HIGHLIGHT ── -->
+<section style="padding-top:0;">
+  <div class="container">
+    <div class="highlight reveal">
+      <div class="highlight-num">1 : 1</div>
+      <div>
+        <h3 data-i18n="hl_t">하루 한 명, 오직 한 아이를 위한 검사</h3>
+        <p data-i18n="hl_d">조이소아과는 성조숙증 유발검사를 <b style="color:var(--text); font-weight:500;">1일 1환아 원칙</b>으로 운영합니다. 약 2시간 동안 전담 간호사가 한 아이만 관리하며, 30분 간격 5회 채혈을 통증 최소화 방식(캐뉼라 1회 삽입)으로 진행합니다. 효율보다 정확도와 아이의 심리적 안정을 우선하는 이 운영 철학이 신뢰의 차별점이 됩니다.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── PACKAGE ── -->
+<section class="package">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="label">Consulting Package</span>
+      <h2>What We <em>Provide</em></h2>
+      <p data-i18n="pkg_lead">진료 시스템부터 장비, 제품 공급, 인력 교육까지 — 개원에 필요한 전 과정을 지원합니다.</p>
+    </div>
+    <div class="pkg-grid">
+      <div class="pkg reveal">
+        <span class="pkg-num">01</span>
+        <h3 data-i18n="k1_t">진료 프로토콜 이식</h3>
+        <p data-i18n="k1_d">검사 순서, 판독 기준, 치료 플랜, 상담 스크립트까지 실제 운영 중인 프로토콜을 현지 상황에 맞춰 제공합니다.</p>
+      </div>
+      <div class="pkg reveal">
+        <span class="pkg-num">02</span>
+        <h3 data-i18n="k2_t">장비 · 제품 공급</h3>
+        <p data-i18n="k2_d">X-ray, 체성분 분석기 등 진단 장비와 성장호르몬·검사 키트·영양 제품까지 JOYMEDIX 유통망으로 함께 공급합니다.</p>
+      </div>
+      <div class="pkg reveal">
+        <span class="pkg-num">03</span>
+        <h3 data-i18n="k3_t">인력 교육 · 트레이닝</h3>
+        <p data-i18n="k3_d">현지 의료진과 상담 인력을 대상으로 검사 실무와 상담 노하우를 교육합니다. 필요 시 한국 뷰티션·전문 인력 파견도 연계합니다.</p>
+      </div>
+      <div class="pkg reveal">
+        <span class="pkg-num">04</span>
+        <h3 data-i18n="k4_t">인허가 · 운영 지원</h3>
+        <p data-i18n="k4_d">현지 인허가 대응, 제품 등록, 개원 후 재고·재주문 관리까지 지속적인 운영 파트너로 함께합니다.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CTA ── -->
+<section class="cta-sec">
+  <div class="container reveal">
+    <h2 data-i18n="cta_t">Open Your Clinic</h2>
+    <p data-i18n="cta_p">어느 국가든, 어느 규모든 — 현지 상황에 맞춰 설계해드립니다. 편하게 문의해주세요.</p>
+    <a href="index.html#contact" class="btn solid" data-i18n="btn_contact">[ 개원 상담 문의 ]</a>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="container">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a href="index.html" class="logo">JOY<span>MEDIX</span></a>
+        <p data-i18n="foot_brand">"신뢰 · 정직 · 상생"<br>조이소아과를 모체로 탄생한 K-Medical &amp; Beauty 전문 기업. 검증된 제품과 서비스로 파트너와 함께 성장합니다.</p>
+        <div class="foot-social">
+          <a href="https://wa.me/821081460279" target="_blank" rel="noopener" aria-label="WhatsApp">WhatsApp</a>
+          <a href="https://www.instagram.com/joymedix/" target="_blank" rel="noopener" aria-label="Instagram">Instagram</a>
+          <a href="#" aria-label="Blog">Blog</a>
+          <a href="#" aria-label="LinkedIn">LinkedIn</a>
+        </div>
+      </div>
+      <div class="foot-col">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="index.html#about">About Us</a></li>
+          <li><a href="index.html#business">Business</a></li>
+          <li><a href="clinic.html">Clinic Consulting</a></li>
+          <li><a href="process.html">Process</a></li>
+          <li><a href="index.html#products">Products</a></li>
+          <li><a href="index.html#global">Global Network</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>Company</h4>
+        <ul>
+          <li data-i18n="foot_co">주식회사 조이메딕스</li>
+          <li data-i18n="foot_ceo">대표 : 배진영</li>
+          <li data-i18n="foot_bizno">사업자등록번호 : 666-88-03839</li>
+          <li data-i18n="foot_addr">경기도 파주시 해올1길 12, 201호</li>
+          <li><a href="mailto:jykhl79@gmail.com">jykhl79@gmail.com</a></li>
+          <li><a href="https://wa.me/821081460279" target="_blank" rel="noopener">WhatsApp +82 10-8146-0279</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 JOYMEDIX. All Rights Reserved.</span>
+      <span>K-Medical &amp; Beauty, From Clinic To The World</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ── FLOATING WHATSAPP ── -->
+<a class="float-wa" href="https://wa.me/821081460279" target="_blank" rel="noopener" aria-label="WhatsApp">
+  <span class="wa-label" data-i18n="wa_label">WhatsApp으로 문의하기</span>
+  <span class="wa-btn">
+    <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><path d="M16.004 3.2c-7.06 0-12.8 5.74-12.8 12.8 0 2.26.59 4.46 1.71 6.4L3.2 28.8l6.58-1.67a12.74 12.74 0 0 0 6.22 1.6h.01c7.06 0 12.79-5.74 12.79-12.8 0-3.42-1.33-6.63-3.75-9.05a12.72 12.72 0 0 0-9.05-3.68zm0 23.36h-.01a10.6 10.6 0 0 1-5.4-1.48l-.39-.23-4.02 1.02 1.07-3.92-.25-.4a10.57 10.57 0 0 1-1.63-5.65c0-5.87 4.78-10.64 10.66-10.64 2.84 0 5.51 1.11 7.52 3.12a10.57 10.57 0 0 1 3.11 7.53c0 5.87-4.78 10.65-10.66 10.65zm5.84-7.97c-.32-.16-1.89-.93-2.19-1.04-.29-.11-.5-.16-.72.16-.21.32-.82 1.04-1.01 1.25-.18.21-.37.24-.69.08-.32-.16-1.35-.5-2.57-1.59-.95-.85-1.59-1.9-1.78-2.22-.18-.32-.02-.49.14-.65.15-.14.32-.37.48-.56.16-.19.21-.32.32-.53.11-.21.05-.4-.03-.56-.08-.16-.72-1.73-.98-2.37-.26-.62-.52-.54-.72-.55h-.61c-.21 0-.56.08-.85.4-.29.32-1.12 1.09-1.12 2.66 0 1.57 1.14 3.08 1.3 3.29.16.21 2.25 3.44 5.45 4.82.76.33 1.36.53 1.82.67.77.24 1.46.21 2.01.13.61-.09 1.89-.77 2.16-1.52.27-.75.27-1.39.19-1.52-.08-.13-.29-.21-.61-.37z"/></svg>
+  </span>
+</a>
+
+<script>
+  /* 다국어 (KO / EN) — 다른 페이지와 저장 키 공유 */
+  const I18N = {
+    ko: {
+      _title: '클리닉 개원 컨설팅 | 조이메딕스 JOYMEDIX',
+      hero_p: '한국에서 검증된 성장·성조숙증·소아비만 클리닉 모델을 해외 현지에 그대로 이식합니다. 진료 프로토콜부터 장비, 제품, 인력 교육까지 — 개원의 처음부터 끝까지 함께합니다.',
+      origin_h3: '이론이 아닌,<br><span>매일 운영되는 진료 현장에서 나온 모델</span>',
+      origin_p1: 'JOYMEDIX가 제안하는 클리닉 모델은 컨설팅사가 만든 자료가 아닙니다. 모체인 조이소아청소년과의원이 실제로 운영하며 축적한 진료 프로토콜, 검사 체계, 환자 관리 시스템을 그대로 옮긴 것입니다.',
+      origin_p2: '성장(키), 성조숙증, 소아비만 — 이 세 영역은 서로 맞물려 있습니다. 조이소아과는 이를 분리하지 않고 \'성장 밸런스\'라는 하나의 축으로 통합 관리하며, 이 통합 모델이 해외 파트너에게 전달하는 핵심 자산입니다.',
+      f1_t: '검증된 진료 프로토콜', f1_d: '실제 환자 데이터로 다듬어진 검사·판독·치료 흐름을 그대로 제공합니다.',
+      f2_t: '장비 · 제품 원스톱 공급', f2_d: 'X-ray, 체성분 분석기부터 성장호르몬·검사 키트까지 개원에 필요한 모든 것을 함께 공급합니다.',
+      f3_t: '전담 상담 시스템 이식', f3_d: '1:1 전담 상담 간호사 운영 노하우 — 재방문율을 좌우하는 핵심 시스템을 교육합니다.',
+      prog_lead: '조이소아과가 운영 중인 세 가지 성장 클리닉 프로그램. 각각 독립 운영도, 통합 운영도 가능합니다.',
+      p1_t: '성장 클리닉 <small style="font-weight:400; color:var(--text-faint);">(작은아이)</small>',
+      p1_d: '또래보다 키가 작은 아이의 성장 가능성을 정밀 분석하고, 성장판이 닫히기 전 골든타임을 관리합니다.',
+      p1s1_t: '성장판 X-ray 검사', p1s1_d: '손바닥 X-ray로 뼈나이(골연령)를 촬영해 뼈 성숙도와 성장 속도를 분석',
+      p1s2_t: '혈액 검사', p1s2_d: '전반적 건강 상태와 성장 지연 원인 평가, 필요 시 상급병원 연계',
+      p1s3_t: '예상 성인키 분석', p1s3_d: '성장 곡선 기반으로 예상 성인 키를 예측하고 관리 시점 제시',
+      p1s4_t: '성장플랜 관리', p1s4_d: '전담 상담 간호사가 검사·주사 일정과 성장 변화를 체계적으로 관리',
+      p2_t: '성조숙증 클리닉 <small style="font-weight:400; color:var(--text-faint);">(빠른아이)</small>',
+      p2_d: '여아 만 8세·남아 만 9세 이전 2차성징이 나타나는 경우, 조기 진단으로 성장판 조기 폐쇄를 막습니다.',
+      p2s1_t: '문진 및 증상 확인', p2s1_d: '유방 멍울, 성장 속도, 신체 변화, 가족력을 종합 평가',
+      p2s2_t: '뼈나이 X-ray 검사', p2s2_d: '골연령 촬영으로 실제 나이 대비 뼈 성숙 정도를 분석',
+      p2s3_t: '유방 촉진 검사', p2s3_d: '유선 발달 상태를 단계별로 진단',
+      p2s4_t: 'GnRH 유발검사', p2s4_d: '확진 검사 — 성선자극호르몬 투여 후 뇌하수체 반응을 정밀 측정',
+      p3_t: '소아비만 클리닉 <small style="font-weight:400; color:var(--text-faint);">(큰아이)</small>',
+      p3_d: '단순 체중 감량이 아닌, 호르몬 불균형과 성장 억제까지 함께 보는 통합 성장 관리 시스템입니다.',
+      p3s1_t: '비만 원인 검사', p3s1_d: '성장호르몬·갑상선·인슐린 등 주요 호르몬 분석으로 내분비 이상 확인',
+      p3s2_t: '성장호르몬 검사', p3s2_d: '호르몬 유발검사로 성장 억제 원인을 정확히 진단',
+      p3s3_t: '체성분 분석', p3s3_d: '근육·지방·수분 밸런스를 객관적으로 파악해 맞춤 영양 지도에 반영',
+      p3s4_t: '생활습관 코칭', p3s4_d: '전담 상담 간호사가 식습관·운동·수면을 통합 피드백으로 관리',
+      hl_t: '하루 한 명, 오직 한 아이를 위한 검사',
+      hl_d: '조이소아과는 성조숙증 유발검사를 <b style="color:var(--text); font-weight:500;">1일 1환아 원칙</b>으로 운영합니다. 약 2시간 동안 전담 간호사가 한 아이만 관리하며, 30분 간격 5회 채혈을 통증 최소화 방식(캐뉼라 1회 삽입)으로 진행합니다. 효율보다 정확도와 아이의 심리적 안정을 우선하는 이 운영 철학이 신뢰의 차별점이 됩니다.',
+      pkg_lead: '진료 시스템부터 장비, 제품 공급, 인력 교육까지 — 개원에 필요한 전 과정을 지원합니다.',
+      k1_t: '진료 프로토콜 이식', k1_d: '검사 순서, 판독 기준, 치료 플랜, 상담 스크립트까지 실제 운영 중인 프로토콜을 현지 상황에 맞춰 제공합니다.',
+      k2_t: '장비 · 제품 공급', k2_d: 'X-ray, 체성분 분석기 등 진단 장비와 성장호르몬·검사 키트·영양 제품까지 JOYMEDIX 유통망으로 함께 공급합니다.',
+      k3_t: '인력 교육 · 트레이닝', k3_d: '현지 의료진과 상담 인력을 대상으로 검사 실무와 상담 노하우를 교육합니다. 필요 시 한국 뷰티션·전문 인력 파견도 연계합니다.',
+      k4_t: '인허가 · 운영 지원', k4_d: '현지 인허가 대응, 제품 등록, 개원 후 재고·재주문 관리까지 지속적인 운영 파트너로 함께합니다.',
+      cta_t: 'Open Your Clinic',
+      cta_p: '어느 국가든, 어느 규모든 — 현지 상황에 맞춰 설계해드립니다. 편하게 문의해주세요.',
+      btn_contact: '[ 개원 상담 문의 ]',
+      wa_label: 'WhatsApp으로 문의하기',
+      foot_brand: '"신뢰 · 정직 · 상생"<br>조이소아과를 모체로 탄생한 K-Medical &amp; Beauty 전문 기업. 검증된 제품과 서비스로 파트너와 함께 성장합니다.',
+      foot_co: '주식회사 조이메딕스',
+      foot_ceo: '대표 : 배진영',
+      foot_bizno: '사업자등록번호 : 666-88-03839',
+      foot_addr: '경기도 파주시 해올1길 12, 201호'
+    },
+    en: {
+      _title: 'Clinic Setup Consulting | JOYMEDIX',
+      hero_p: 'We replicate a proven Korean growth, precocious puberty, and pediatric obesity clinic model at your location — from clinical protocols to equipment, products, and staff training. We are with you from start to opening day.',
+      origin_h3: 'Not theory —<br><span>a model born in a working clinic</span>',
+      origin_p1: 'The clinic model JOYMEDIX offers is not a consultancy deck. It is the actual clinical protocol, examination system, and patient management workflow accumulated by our parent clinic, Joy Pediatric &amp; Adolescent Clinic, through daily practice.',
+      origin_p2: 'Growth, precocious puberty, and pediatric obesity are interconnected. Joy Clinic manages them not separately but as one axis — "growth balance" — and this integrated model is the core asset we transfer to our overseas partners.',
+      f1_t: 'Proven Clinical Protocols', f1_d: 'Examination, interpretation, and treatment workflows refined through real patient data — delivered as-is.',
+      f2_t: 'One-stop Equipment &amp; Supply', f2_d: 'From X-ray and body composition analyzers to growth hormones and test kits — everything a clinic needs.',
+      f3_t: 'Dedicated Counseling System', f3_d: 'We train your team on the 1:1 dedicated counseling nurse system — the key driver of patient retention.',
+      prog_lead: 'Three growth clinic programs currently running at Joy Clinic. Each can operate independently or as an integrated practice.',
+      p1_t: 'Growth Clinic',
+      p1_d: 'Precisely analyzes growth potential in children shorter than their peers, managing the golden window before growth plates close.',
+      p1s1_t: 'Growth Plate X-ray', p1s1_d: 'Hand X-ray captures bone age to assess skeletal maturity and growth velocity',
+      p1s2_t: 'Blood Test', p1s2_d: 'Evaluates overall health and causes of growth delay, with referral to tertiary hospitals when needed',
+      p1s3_t: 'Predicted Adult Height', p1s3_d: 'Growth-curve analysis projects adult height and identifies the right intervention timing',
+      p1s4_t: 'Growth Plan Management', p1s4_d: 'A dedicated counseling nurse manages test and injection schedules and tracks growth changes',
+      p2_t: 'Precocious Puberty Clinic',
+      p2_d: 'When secondary sex characteristics appear before age 8 in girls or 9 in boys, early diagnosis prevents premature growth plate closure.',
+      p2s1_t: 'History &amp; Symptom Review', p2s1_d: 'Comprehensive assessment of breast budding, growth velocity, physical changes, and family history',
+      p2s2_t: 'Bone Age X-ray', p2s2_d: 'Bone age imaging analyzes skeletal maturity relative to chronological age',
+      p2s3_t: 'Breast Palpation Exam', p2s3_d: 'Stages mammary gland development',
+      p2s4_t: 'GnRH Stimulation Test', p2s4_d: 'Confirmatory test — precisely measures pituitary response after GnRH administration',
+      p3_t: 'Pediatric Obesity Clinic',
+      p3_d: 'Not simple weight loss — an integrated system that addresses hormonal imbalance and growth suppression together.',
+      p3s1_t: 'Obesity Cause Screening', p3s1_d: 'Analyzes growth hormone, thyroid, and insulin levels to identify endocrine dysfunction',
+      p3s2_t: 'Growth Hormone Test', p3s2_d: 'Stimulation testing pinpoints the cause of suppressed growth',
+      p3s3_t: 'Body Composition Analysis', p3s3_d: 'Objectively measures muscle, fat, and fluid balance to guide personalized nutrition',
+      p3s4_t: 'Lifestyle Coaching', p3s4_d: 'A dedicated nurse manages diet, exercise, and sleep through integrated feedback',
+      hl_t: 'One Patient a Day — Undivided Attention',
+      hl_d: 'Joy Clinic runs its GnRH stimulation test on a <b style="color:var(--text); font-weight:500;">one-patient-per-day principle</b>. For roughly two hours, a dedicated nurse attends to a single child, drawing blood five times at 30-minute intervals with a single cannula insertion to minimize pain. Prioritizing accuracy and the child\'s comfort over throughput is what earns lasting trust.',
+      pkg_lead: 'From clinical systems to equipment, product supply, and staff training — we support the entire path to opening.',
+      k1_t: 'Clinical Protocol Transfer', k1_d: 'Examination sequences, interpretation criteria, treatment plans, and counseling scripts — all adapted to your local context.',
+      k2_t: 'Equipment &amp; Product Supply', k2_d: 'Diagnostic equipment such as X-ray and body composition analyzers, plus growth hormones, test kits, and nutritional products through the JOYMEDIX network.',
+      k3_t: 'Staff Training', k3_d: 'We train local medical and counseling staff in examination practice and consultation know-how. Korean specialists and beauticians can be dispatched as needed.',
+      k4_t: 'Regulatory &amp; Operations', k4_d: 'Local regulatory support, product registration, and ongoing inventory and reorder management after opening.',
+      cta_t: 'Open Your Clinic',
+      cta_p: 'Any country, any scale — we design around your local situation. Reach out anytime.',
+      btn_contact: '[ Request Consultation ]',
+      wa_label: 'Chat on WhatsApp',
+      foot_brand: '"Trust · Honesty · Win-Win"<br>A K-Medical &amp; Beauty specialist born from Joy Pediatric Clinic. Growing together with our partners through proven products and services.',
+      foot_co: 'Joymedix Co., Ltd.',
+      foot_ceo: 'CEO : Jinyoung Bae',
+      foot_bizno: 'Business Reg. No. : 666-88-03839',
+      foot_addr: '#201, 12 Haeol 1-gil, Paju-si, Gyeonggi-do, Korea'
+    }
+  };
+
+  let currentLang = localStorage.getItem('joymedix-lang') || 'ko';
+
+  function setLang(lang) {
+    currentLang = lang;
+    localStorage.setItem('joymedix-lang', lang);
+    document.documentElement.lang = lang;
+    document.title = I18N[lang]._title;
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const t = I18N[lang][el.dataset.i18n];
+      if (t !== undefined) el.innerHTML = t;
+    });
+    document.getElementById('langKo').classList.toggle('active', lang === 'ko');
+    document.getElementById('langEn').classList.toggle('active', lang === 'en');
+  }
+  document.querySelectorAll('[data-setlang]').forEach(btn =>
+    btn.addEventListener('click', () => setLang(btn.dataset.setlang))
+  );
+  setLang(currentLang);
+
+  /* 모바일 메뉴 */
+  const toggle = document.getElementById('menuToggle');
+  const links = document.getElementById('navLinks');
+  toggle.addEventListener('click', () => links.classList.toggle('open'));
+
+  /* 스크롤 리빌 + 스태거 */
+  document.querySelectorAll('.prog-grid, .pkg-grid, .origin-facts').forEach(grid =>
+    [...grid.children].forEach((el, i) => el.style.setProperty('--d', (i * .12) + 's'))
+  );
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('on'); io.unobserve(e.target); } });
+  }, { threshold: .12, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  /* 네비게이션 스크롤 변화 */
+  const navEl = document.querySelector('nav');
+  let ticking = false;
+  window.addEventListener('scroll', () => {
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(() => {
+      navEl.classList.toggle('scrolled', window.scrollY > 40);
+      ticking = false;
+    });
+  }, { passive: true });
+</script>
+
+</body>
+</html>
