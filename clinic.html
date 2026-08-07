@@ -109,26 +109,32 @@
   .nav-cta:hover { background:var(--accent); border-color:var(--accent); color:#03201c; }
   .menu-toggle { display:none; background:none; border:none; color:var(--text); font-size:24px; cursor:pointer; }
 
-  /* ── Page hero ────────────────────── */
+  /* ── Page hero (배경 영상) ────────── */
   .page-hero {
-    padding: 190px 0 90px;
+    padding: 190px 0 100px;
     position: relative;
-    background:
-      radial-gradient(ellipse 60% 50% at 78% 18%, rgba(45,212,191,.10), transparent 60%),
-      var(--bg);
+    background: var(--bg);
     overflow: hidden;
   }
-  .page-hero::after {
-    content:'';
-    position:absolute; inset:0;
-    background-image: linear-gradient(var(--line) 1px, transparent 1px), linear-gradient(90deg, var(--line) 1px, transparent 1px);
-    background-size: 80px 80px;
-    opacity:.16;
-    mask-image: radial-gradient(ellipse 70% 70% at 50% 30%, black, transparent 80%);
-    -webkit-mask-image: radial-gradient(ellipse 70% 70% at 50% 30%, black, transparent 80%);
-    pointer-events:none;
+  .hero-video {
+    position: absolute; inset: 0;
+    width: 100%; height: 100%;
+    object-fit: cover;
+    object-position: 50% 22%;  /* 인물 얼굴이 잘리지 않도록 위쪽 기준 */
+    z-index: 0;
   }
-  .page-hero .container { position:relative; z-index:1; }
+  /* 영상 위 어둡게 덮어 글자 가독성 확보 */
+  .hero-overlay {
+    position: absolute; inset: 0; z-index: 1;
+    background:
+      linear-gradient(to bottom, rgba(5,5,5,.5) 0%, rgba(5,5,5,.34) 45%, rgba(5,5,5,.92) 100%),
+      linear-gradient(100deg, rgba(5,5,5,.82) 0%, rgba(5,5,5,.34) 58%, rgba(5,5,5,.06) 100%);
+    pointer-events: none;
+  }
+  .page-hero .container { position:relative; z-index:2; }
+  .page-hero .statement,
+  .page-hero h1,
+  .page-hero > .container > p { text-shadow: 0 2px 22px rgba(0,0,0,.6); }
   .page-hero h1 {
     font-family: var(--font-en); font-weight: 800;
     font-size: clamp(24px, 3.2vw, 38px);
@@ -422,6 +428,10 @@
 
 <!-- ── PAGE HERO ── -->
 <header class="page-hero">
+  <video class="hero-video" autoplay muted loop playsinline preload="auto">
+    <source src="clinic-bg.mp4" type="video/mp4">
+  </video>
+  <div class="hero-overlay"></div>
   <div class="container">
     <span class="label">Clinic Setup Consulting</span>
     <div class="statement">
@@ -730,6 +740,14 @@
     entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('on'); io.unobserve(e.target); } });
   }, { threshold: .12, rootMargin: '0px 0px -40px 0px' });
   document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  /* 영상 자동재생 재시도 (모바일 저전력 모드 등) */
+  const vid = document.querySelector('.hero-video');
+  if (vid) {
+    ['touchstart','click','scroll'].forEach(ev =>
+      document.addEventListener(ev, () => { if (vid.paused) vid.play().catch(()=>{}); }, { once:true, passive:true })
+    );
+  }
 
   /* 네비게이션 스크롤 변화 */
   const navEl = document.querySelector('nav');
